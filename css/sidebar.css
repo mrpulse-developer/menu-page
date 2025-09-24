@@ -1,0 +1,121 @@
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -280px; /* Hidden */
+  width: 280px;
+  height: 100%;
+  background: #fff;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+  transition: left 0.3s ease;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Active Sidebar */
+.sidebar.active {
+  left: 0;
+}
+
+/* Header */
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.profile {
+  text-align: left;
+}
+
+.profile-img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-bottom: 8px;
+}
+
+.profile-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.profile-email {
+  font-size: 0.85rem;
+  color: #777;
+}
+
+/* Close Button */
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 2rem;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: #333;
+}
+.close-btn:hover {
+  color: #ff5722;
+}
+
+/* Sidebar Links */
+.sidebar-links {
+  list-style: none;
+  padding: 20px;
+  margin: 0;
+  flex-grow: 1;
+}
+
+.sidebar-links li {
+  margin: 18px 0;
+}
+
+.sidebar-links a {
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: all 0.3s ease;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.sidebar-links a:hover {
+  background: #ff5722;
+  color: #fff;
+}
+
+/* Footer */
+.sidebar-footer {
+  padding: 20px;
+  border-top: 1px solid #eee;
+}
+
+.logout-btn {
+  width: 100%;
+  background: #ff5722;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.logout-btn:hover {
+  background: #e64a19;
+}

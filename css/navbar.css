@@ -1,0 +1,136 @@
+/* Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Roboto, sans-serif;
+  background: #f9f9f9;
+  color: #333;
+  line-height: 1.5;
+}
+
+/* Header */
+header {
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.main-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+}
+
+/* Logo */
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ff5722;
+  letter-spacing: 1px;
+  text-decoration: none;
+}
+
+/* Nav Links */
+ul.main-nav-link {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+ul.main-nav-link li a {
+  text-decoration: none;
+  font-weight: 500;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+ul.main-nav-link li a:hover {
+  color: #ff5722;
+}
+
+/* Buttons */
+.btn {
+  padding: 6px 12px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  border-radius: 6px;
+  border: 2px solid #ff5722;
+  cursor: pointer;
+  background: transparent;
+  transition: all 0.3s ease;
+}
+
+.btn.login-btn {
+  background-color: #fff;
+  color: #ff5722;
+}
+
+.btn.login-btn:hover {
+  background-color: #ff5722;
+  color: #fff;
+}
+
+.btn.signup-btn {
+  background-color: #ff5722;
+  color: #fff;
+}
+
+.btn.signup-btn:hover {
+  background-color: #fff;
+  color: #ff5722;
+}
+
+/* Hamburger */
+.hamburger-btn {
+  display: none;
+  background-color: transparent;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.hamburger-btn:hover {
+  color: #ff5722;
+}
+
+.left-side {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.main-nav-btn {
+  display: flex;
+  gap: 8px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  ul.main-nav-link {
+    display: none;
+    flex-direction: column;
+    gap: 1rem;
+    background: #fff;
+    padding: 1rem;
+    position: absolute;
+    top: 60px;
+    right: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+
+  ul.main-nav-link.active {
+    display: flex;
+  }
+
+  .hamburger-btn {
+    display: block;
+  }
+}

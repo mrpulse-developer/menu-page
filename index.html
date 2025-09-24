@@ -1,20 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MrPulse - Menu - Page</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MrPulse - Menu Page</title>
+    <style>
+      /* Reset & Base */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Segoe UI", Roboto, sans-serif;
+        background: #f9f9f9;
+        color: #333;
+      }
+
+      /* Header */
+      header {
+        background: #fff;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+
+      nav {
+        max-width: 1200px;
+        margin: auto;
+        padding: 1rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      /* Logo */
+      .logo {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #ff5722;
+        letter-spacing: 1px;
+      }
+
+      /* Nav Links */
+      ul {
+        list-style: none;
+        display: flex;
+        gap: 2rem;
+      }
+      ul li a {
+        text-decoration: none;
+        font-weight: 500;
+        color: #333;
+        transition: color 0.3s ease;
+      }
+      ul li a:hover {
+        color: #ff5722;
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        nav {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+        ul {
+          flex-direction: column;
+          width: 100%;
+          margin-top: 1rem;
+          gap: 1rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
     <header>
-        <nav>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Order</a></li>
-                <li><a href="#">Services</a></li>
-            </ul>
-        </nav>
+      <nav>
+        <div class="logo">MrPulse</div>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Order</a></li>
+          <li><a href="#">Services</a></li>
+        </ul>
+      </nav>
     </header>
-</body>
+  </body>
 </html>

@@ -12,6 +12,7 @@
     <title>Fast Food - by Mr Pulse</title>
 
     <link rel="stylesheet" href="css/navbar.css" />
+    <link rel="stylesheet" href="css/hero-sec.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
       rel="stylesheet"
@@ -21,6 +22,11 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <style>
       * {
@@ -63,13 +69,86 @@
 
         <!-- Right Side Buttons -->
         <div class="navbar__actions">
-          <button class="btn btn-profile" aria-label="Profile">
-            <i class="fa-solid fa-user"></i>
+          <button class="btn-profile">
+            <i class="fa-solid fa-user"></i> Profile
           </button>
-          <button class="btn btn-order">Order</button>
         </div>
       </nav>
     </header>
+    <main>
+      <section class="hero">
+        <!-- Left Content -->
+        <div class="hero__left">
+          <span class="hero__tagline">🍴 100% Fresh & Tasty</span>
+          <h2>We Serve The Taste You Love 😍</h2>
+          <p>
+            Fresh, delicious, and healthy meals made with love. Explore our menu
+            and order your favorite dishes today.
+          </p>
+
+          <!-- Social Media -->
+          <div class="hero__socials">
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+
+          <!-- Buttons -->
+          <div class="hero__buttons">
+            <button class="btn btn-order">Order</button>
+            <button class="btn btn-secondary">View Menu</button>
+          </div>
+        </div>
+
+        <!-- Right Content -->
+        <div class="hero__right">
+          <div class="hero__image-box">
+            <img
+              src="assets/chef.webp"
+              alt="Delicious Food"
+              class="hero__image"
+            />
+          </div>
+
+          <!-- List (Desktop) -->
+          <div class="hero__list-box">
+            <ul class="hero__list">
+              <li>🍽️ Dishes</li>
+              <li>🍩 Dessert</li>
+              <li>🥤 Drinks</li>
+              <li>🍱 Platter</li>
+              <li>🍪 Snacks</li>
+            </ul>
+
+            <!-- Swiper Slider (Mobile) -->
+            <div class="swiper heroSwiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">🍽️ Dishes</div>
+                <div class="swiper-slide">🍩 Dessert</div>
+                <div class="swiper-slide">🥤 Drinks</div>
+                <div class="swiper-slide">🍱 Platter</div>
+                <div class="swiper-slide">🍪 Snacks</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script>
+      var swiper = new Swiper(".heroSwiper", {
+        slidesPerView: "auto", // har slide apni width lega
+        spaceBetween: 20, // gap between slides
+        loop: true, // infinite loop
+        freeMode: true, // smooth scroll
+        autoplay: {
+          delay: 0, // no delay
+          disableOnInteraction: false,
+        },
+        speed: 4000, // smooth continuous speed
+        allowTouchMove: false, // user swipe disable (sirf auto move karega)
+      });
+    </script>
 
     <script src="js/main.js"></script>
   </body>

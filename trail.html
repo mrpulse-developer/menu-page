@@ -1,0 +1,494 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>FastFood — Trial Menu</title>
+
+  <!-- Google Font + FontAwesome -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/yourfontawesomekit.js" crossorigin="anonymous"></script>
+  <!-- If you don't have FontAwesome kit, replace icons or use CDN link -->
+  <style>
+    :root{
+      --primary:#ff5722;
+      --muted:#f7f7f7;
+      --bg:#fffaf7;
+      --card:#fff;
+      --shadow:rgba(0,0,0,0.12);
+      --glass: rgba(255,255,255,0.6);
+      --accent-dark:#e64a19;
+      --max-width:1200px;
+    }
+    *{box-sizing:border-box;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;margin:0;padding:0}
+    body{background:var(--bg);color:#222;line-height:1.35;-webkit-font-smoothing:antialiased}
+    a{color:inherit;text-decoration:none}
+
+    /* ---------- NAVBAR ---------- */
+    .navbar{
+      position:sticky;top:0;z-index:40;
+      backdrop-filter: blur(6px);
+      background: linear-gradient(180deg, rgba(255,255,255,0.85), rgba(255,255,255,0.6));
+      border-bottom:1px solid rgba(0,0,0,0.04);
+      padding:14px 6%;
+      display:flex;align-items:center;gap:18px;justify-content:space-between;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+    }
+    .logo{font-weight:800;color:var(--primary);font-size:1.15rem;display:flex;align-items:center;gap:10px}
+    .logo i{font-size:1.3rem}
+    .nav-links{display:flex;gap:18px;align-items:center}
+    .nav-links a{font-weight:600;color:#444;padding:8px 12px;border-radius:8px}
+    .nav-links a:hover{background:#fff;border:1px solid rgba(0,0,0,0.04)}
+    .nav-actions{display:flex;gap:12px;align-items:center}
+    .btn-primary{background:var(--primary);color:#fff;padding:9px 16px;border-radius:999px;border:none;font-weight:700;cursor:pointer}
+    .btn-primary:hover{background:var(--accent-dark)}
+
+    .cart-btn{position:relative;background:transparent;border:1px solid rgba(0,0,0,0.05);padding:8px;border-radius:10px;cursor:pointer}
+    .cart-count{position:absolute;right:2px;top:2px;background:var(--primary);color:#fff;border-radius:50%;width:20px;height:20px;font-size:12px;display:flex;align-items:center;justify-content:center;font-weight:700}
+
+    /* ---------- HERO ---------- */
+    .hero{max-width:var(--max-width);margin:28px auto;padding:28px;display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center}
+    .hero-left h1{font-size:2.2rem;color:var(--primary);margin-bottom:10px}
+    .hero-left p.lead{color:#444;margin-bottom:18px}
+    .hero-left p.small{color:#666;margin-bottom:18px}
+    .hero-ctas{display:flex;gap:12px;align-items:center}
+    .hero-cta-secondary{background:#fff;border:1px solid rgba(0,0,0,0.06);padding:10px 14px;border-radius:10px;cursor:pointer}
+    .hero-right{display:flex;flex-direction:column;gap:10px;align-items:center}
+    .hero-slider{width:100%;height:320px;background:linear-gradient(180deg,#fff,#fff0);border-radius:14px;overflow:hidden;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 24px var(--shadow)}
+    .hero-slider img{width:100%;height:100%;object-fit:cover}
+
+    /* ---------- SUB NAV (scrollable buttons) ---------- */
+    .sub-nav-wrap{max-width:var(--max-width);margin:12px auto;padding:0 6%}
+    .sub-nav{display:flex;gap:12px;overflow-x:auto;padding:12px 6px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}
+    .sub-nav::-webkit-scrollbar{display:none}
+    .cat-btn{flex:0 0 auto;background:#fff;border:1px solid rgba(0,0,0,0.04);padding:9px 14px;border-radius:999px;display:flex;gap:8px;align-items:center;cursor:pointer;white-space:nowrap;font-weight:600}
+    .cat-btn i{color:var(--primary)}
+    .cat-btn.active{background:var(--primary);color:#fff;border-color:var(--primary)}
+    .cat-btn.active i{color:#fff}
+    
+    /* ---------- PRODUCT GRID (desktop-first) ---------- */
+    .section{max-width:var(--max-width);margin:18px auto;padding:0 6%}
+    .fastfood-heading{text-align:center;font-size:1.9rem;color:var(--primary);font-weight:800;margin:18px 0}
+    .fastfood-container{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+    .card-container{background:var(--card);border-radius:14px;padding:14px;box-shadow:0 8px 24px var(--shadow);display:flex;flex-direction:column;align-items:center;transition:transform .22s ease}
+    .card-container:hover{transform:translateY(-8px)}
+    .card-container img{width:100%;height:160px;object-fit:cover;border-radius:10px;margin-bottom:12px}
+    .fastfood-name{font-weight:700;color:#222;margin-bottom:6px}
+    .fastfood-sub{color:#666;font-size:.92rem;margin-bottom:8px}
+    .price{font-weight:800;color:var(--primary);margin-bottom:10px}
+    .fastfood-buy{display:flex;gap:10px;align-items:center}
+    .counter-btn{width:40px;height:40px;border-radius:50%;border:none;background:var(--muted);cursor:pointer;display:flex;align-items:center;justify-content:center;font-weight:700}
+    .qty-input{width:52px;text-align:center;border-radius:8px;border:none;background:#f5f5f5;padding:8px;font-weight:700}
+    .add-cart{margin-top:10px;background:var(--primary);color:#fff;padding:9px 12px;border-radius:10px;border:none;cursor:pointer;font-weight:700;width:100%}
+
+    /* small meta row */
+    .meta-row{width:100%;display:flex;justify-content:space-between;align-items:center;margin-top:8px;font-size:0.9rem;color:#666}
+
+    /* ---------- FLOATING CART ---------- */
+    .floating-cart{
+      position:fixed;right:28px;bottom:28px;width:340px;background:linear-gradient(180deg, rgba(255,255,255,0.98), rgba(255,255,255,0.95));border-radius:14px;box-shadow:0 18px 40px rgba(0,0,0,0.18);z-index:80;overflow:hidden;display:flex;flex-direction:column;
+      transform:translateY(0);transition:all .22s ease
+    }
+    .cart-head{display:flex;align-items:center;justify-content:space-between;padding:12px 14px;border-bottom:1px solid rgba(0,0,0,0.04)}
+    .cart-body{max-height:320px;overflow:auto;padding:12px 14px;display:flex;flex-direction:column;gap:12px}
+    .cart-item{display:flex;gap:10px;align-items:center}
+    .cart-item img{width:56px;height:56px;object-fit:cover;border-radius:8px}
+    .cart-item .ci-info{flex:1}
+    .cart-item .ci-info b{display:block}
+    .cart-item .ci-actions{display:flex;gap:8px;align-items:center}
+    .cart-footer{padding:12px 14px;border-top:1px solid rgba(0,0,0,0.04);display:flex;flex-direction:column;gap:10px}
+    .checkout-btn{background:var(--primary);color:#fff;padding:10px;border-radius:10px;border:none;font-weight:800;cursor:pointer}
+    .empty-msg{text-align:center;color:#666;padding:18px 6px}
+
+    /* small screens */
+    @media (max-width:1100px){
+      .fastfood-container{grid-template-columns:repeat(3,1fr)}
+      .hero{grid-template-columns:1fr}
+      .hero-right{order:-1}
+      .hero-slider{height:260px}
+      .floating-cart{right:16px;left:16px;bottom:16px;width:auto}
+    }
+    @media (max-width:760px){
+      .fastfood-container{grid-template-columns:repeat(2,1fr)}
+      .hero-left h1{font-size:1.6rem}
+      .hero-slider{height:200px}
+      .floating-cart{width:100%;left:0;right:0;border-radius:10px}
+    }
+    @media (max-width:420px){
+      .fastfood-container{grid-template-columns:1fr}
+      .cat-btn{padding:8px 10px;font-size:.95rem}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="logo"><i class="fa-solid fa-burger"></i> FastFood</div>
+    <nav class="nav-links" aria-label="Main">
+      <a href="#">Home</a>
+      <a href="#menu">Menu</a>
+      <a href="#offers">Offers</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="nav-actions">
+      <button class="btn-primary hero-order" onclick="scrollToMenu()">Order Now</button>
+      <button class="cart-btn" id="openCartBtn" title="Cart">
+        <i class="fa-solid fa-cart-shopping" style="font-size:18px"></i>
+        <div class="cart-count" id="cartCount" style="display:none">0</div>
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" aria-label="hero">
+    <div class="hero-left">
+      <h1>Delicious Fast Food, Delivered Hot</h1>
+      <p class="lead">Fresh ingredients, quick delivery — order your favourites in seconds.</p>
+      <p class="small">No signup required. Tap items, add to cart & checkout — that’s it.</p>
+      <div class="hero-ctas">
+        <button class="btn-primary hero-order" onclick="scrollToMenu()">Order Now</button>
+        <button class="hero-cta-secondary" onclick="document.getElementById('offers').scrollIntoView({behavior:'smooth'})">Today's Offers</button>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <div class="hero-slider" id="heroSlider">
+        <img src="https://images.unsplash.com/photo-1604908177522-f1b5aa0eba8f?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=0c2706f7f78f1f88e2f520a3700b2b1d" alt="Delicious platter">
+      </div>
+    </div>
+  </section>
+
+  <!-- SUB NAV (categories) -->
+  <div class="sub-nav-wrap">
+    <div class="sub-nav" id="categories">
+      <div class="cat-btn active" data-cat="all"><i class="fa-solid fa-list"></i> All</div>
+      <div class="cat-btn" data-cat="burgers"><i class="fa-solid fa-hamburger"></i> Burgers</div>
+      <div class="cat-btn" data-cat="pizzas"><i class="fa-solid fa-pizza-slice"></i> Pizzas</div>
+      <div class="cat-btn" data-cat="fries"><i class="fa-solid fa-plate-wheat"></i> Fries</div>
+      <div class="cat-btn" data-cat="drinks"><i class="fa-solid fa-mug-saucer"></i> Drinks</div>
+      <div class="cat-btn" data-cat="pasta"><i class="fa-solid fa-bowl-food"></i> Pasta</div>
+      <div class="cat-btn" data-cat="sandwich"><i class="fa-solid fa-bread-slice"></i> Sandwich</div>
+      <div class="cat-btn" data-cat="dessert"><i class="fa-solid fa-ice-cream"></i> Desserts</div>
+    </div>
+  </div>
+
+  <!-- PRODUCTS -->
+  <section id="menu" class="section">
+    <h2 class="fastfood-heading">Our Special Fast Food Menu</h2>
+    <div class="fastfood-container" id="productGrid">
+
+      <!-- Card template entries (8 items) -->
+      <!-- 1 Pizza -->
+      <div class="card-container" data-cat="pizzas" data-id="pizza" data-name="Italian Pizza" data-price="249">
+        <img src="https://static.vecteezy.com/system/resources/previews/047/544/286/large_2x/italian-pizza-on-white-background-photo.jpg" alt="Pizza">
+        <div class="fastfood-name">Italian Pizza</div>
+        <div class="fastfood-sub">Cheesy, thin crust</div>
+        <div class="price">₹249</div>
+        <div class="fastfood-buy">
+          <button class="counter-btn minus">−</button>
+          <input type="text" class="qty-input" value="0" readonly>
+          <button class="counter-btn plus">+</button>
+        </div>
+        <div class="meta-row"><span>Serves: 1</span><span>Veg</span></div>
+        <button class="add-cart">Add to Cart</button>
+      </div>
+
+      <!-- 2 Burger -->
+      <div class="card-container" data-cat="burgers" data-id="burger" data-name="Cheese Burger" data-price="159">
+        <img src="https://img.freepik.com/premium-photo/cheeseburger-isolated-white-background_742252-2233.jpg" alt="Burger">
+        <div class="fastfood-name">Cheese Burger</div>
+        <div class="fastfood-sub">Crispy patty & sauce</div>
+        <div class="price">₹159</div>
+        <div class="fastfood-buy">
+          <button class="counter-btn minus">−</button>
+          <input type="text" class="qty-input" value="0" readonly>
+          <button class="counter-btn plus">+</button>
+        </div>
+        <div class="meta-row"><span>Serves: 1</span><span>Non-Veg</span></div>
+        <button class="add-cart">Add to Cart</button>
+      </div>
+
+      <!-- 3 Fries -->
+      <div class="card-container" data-cat="fries" data-id="fries" data-name="French Fries" data-price="89">
+        <img src="https://thumbs.dreamstime.com/b/transparent-french-fries-plate-ketchup-white-background-french-fries-ketchup-high-resolution-uhd-image-style-290706091.jpg" alt="Fries">
+        <div class="fastfood-name">French Fries</div>
+        <div class="fastfood-sub">Crispy salted fries</div>
+        <div class="price">₹89</div>
+        <div class="fastfood-buy">
+          <button class="counter-btn minus">−</button>
+          <input type="text" class="qty-input" value="0" readonly>
+          <button class="counter-btn plus">+</button>
+        </div>
+        <div class="meta-row"><span>Serves: 1</span><span>Veg</span></div>
+        <button class="add-cart">Add to Cart</button>
+      </div>
+
+      <!-- 4 Cold Drink -->
+      <div class="card-container" data-cat="drinks" data-id="drink" data-name="Cold Drink" data-price="49">
+        <img src="https://media.istockphoto.com/id/530428650/photo/cola-glass-with-ice-cubes.jpg?s=612x612&w=0&k=20&c=keqH2KNWHO1sFxtsBfx5EZjyep1CRBHIqwe_ZwxszHc=" alt="Cold Drink">
+        <div class="fastfood-name">Cold Drink</div>
+        <div class="fastfood-sub">Chilled fizzy cola</div>
+        <div class="price">₹49</div>
+        <div class="fastfood-buy">
+          <button class="counter-btn minus">−</button>
+          <input type="text" class="qty-input" value="0" readonly>
+          <button class="counter-btn plus">+</button>
+        </div>
+        <div class="meta-row"><span>Serves: 1</span><span>Veg</span></div>
+        <button class="add-cart">Add to Cart</button>
+      </div>
+
+      <!-- 5 Pasta -->
+      <div class="card-container" data-cat="pasta" data-id="pasta" data-name="Creamy Pasta" data-price="199">
+        <img src="https://static.vecteezy.com/system/resources/previews/027/644/022/large_2x/pasta-isolated-on-white-background-ai-generated-free-photo.jpg" alt="Pasta">
+        <div class="fastfood-name">Creamy Pasta</div>
+        <div class="fastfood-sub">Alfredo style</div>
+        <div class="price">₹199</div>
+        <div class="fastfood-buy">
+          <button class="counter-btn minus">−</button>
+          <input type="text" class="qty-input" value="0" readonly>
+          <button class="counter-btn plus">+</button>
+        </div>
+        <div class="meta-row"><span>Serves: 1</span><span>Veg</span></div>
+        <button class="add-cart">Add to Cart</button>
+      </div>
+
+      <!-- 6 Sandwich -->
+      <div class="card-container" data-cat="sandwich" data-id="sandwich" data-name="Club Sandwich" data-price="139">
+        <img src="https://img.freepik.com/free-photo/sandwich-with-ham-cheese-lettuce-isolated-white-background_123827-20060.jpg" alt="Sandwich">
+        <div class="fastfood-name">Club Sandwich</div>
+        <div class="fastfood-sub">Toasted layers</div>
+        <div class="price">₹139</div>
+        <div class="fastfood-buy">
+          <button class="counter-btn minus">−</button>
+          <input type="text" class="qty-input" value="0" readonly>
+          <button class="counter-btn plus">+</button>
+        </div>
+        <div class="meta-row"><span>Serves: 1</span><span>Veg/Non-Veg</span></div>
+        <button class="add-cart">Add to Cart</button>
+      </div>
+
+      <!-- 7 Donut -->
+      <div class="card-container" data-cat="dessert" data-id="donut" data-name="Glazed Donut" data-price="79">
+        <img src="https://img.freepik.com/premium-photo/donut-isolated-white-background_62856-1441.jpg" alt="Donut">
+        <div class="fastfood-name">Glazed Donut</div>
+        <div class="fastfood-sub">Sweet & soft</div>
+        <div class="price">₹79</div>
+        <div class="fastfood-buy">
+          <button class="counter-btn minus">−</button>
+          <input type="text" class="qty-input" value="0" readonly>
+          <button class="counter-btn plus">+</button>
+        </div>
+        <div class="meta-row"><span>Serves: 1</span><span>Veg</span></div>
+        <button class="add-cart">Add to Cart</button>
+      </div>
+
+      <!-- 8 Ice Cream -->
+      <div class="card-container" data-cat="dessert" data-id="icecream" data-name="Ice Cream Cup" data-price="99">
+        <img src="https://img.freepik.com/free-photo/delicious-ice-cream-cup-isolated-white-background_123827-23865.jpg" alt="Ice Cream">
+        <div class="fastfood-name">Ice Cream Cup</div>
+        <div class="fastfood-sub">Creamy scoop</div>
+        <div class="price">₹99</div>
+        <div class="fastfood-buy">
+          <button class="counter-btn minus">−</button>
+          <input type="text" class="qty-input" value="0" readonly>
+          <button class="counter-btn plus">+</button>
+        </div>
+        <div class="meta-row"><span>Serves: 1</span><span>Veg</span></div>
+        <button class="add-cart">Add to Cart</button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Simple offers anchor -->
+  <section id="offers" class="section" style="padding-bottom:60px">
+    <h3 style="text-align:center;color:#444">Today's Offers (example)</h3>
+    <p style="text-align:center;color:#666;margin-top:8px">Flat 10% off on orders above ₹499</p>
+  </section>
+
+  <!-- Floating Cart (starts hidden if empty) -->
+  <div class="floating-cart" id="floatingCart" style="display:none">
+    <div class="cart-head">
+      <div><b>Your Cart</b><div style="font-size:12px;color:#666">Items in cart</div></div>
+      <button id="closeCart" style="background:transparent;border:none;cursor:pointer"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="cart-body" id="cartBody">
+      <!-- cart items injected here -->
+    </div>
+    <div class="cart-footer">
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <div style="font-weight:800">Total</div>
+        <div id="cartTotal" style="font-weight:900;color:var(--primary)">₹0</div>
+      </div>
+      <button class="checkout-btn" id="checkoutBtn">Checkout</button>
+    </div>
+  </div>
+
+  <script>
+    // ---------- Helpers ----------
+    const $$ = (s, root=document) => Array.from(root.querySelectorAll(s));
+    const $ = (s) => document.querySelector(s);
+
+    // Cart store: { id: {id,name,price,qty,img} }
+    const cart = {};
+
+    // Update cart UI
+    function updateCartUI(){
+      const cartBody = $('#cartBody');
+      const cartCountEl = $('#cartCount');
+      const floating = $('#floatingCart');
+      cartBody.innerHTML = '';
+      let total = 0; let items = 0;
+      for(const id in cart){
+        const it = cart[id];
+        items += it.qty;
+        total += it.price * it.qty;
+        const el = document.createElement('div');
+        el.className = 'cart-item';
+        el.innerHTML = `
+          <img src="${it.img}" alt="${it.name}">
+          <div class="ci-info">
+            <b>${it.name}</b>
+            <div style="color:#666;font-size:13px">₹${it.price} × ${it.qty}</div>
+          </div>
+          <div class="ci-actions">
+            <button class="counter-btn small-decrease" data-id="${id}">−</button>
+            <button class="counter-btn small-increase" data-id="${id}">+</button>
+            <button style="background:transparent;border:none;color:#c33;cursor:pointer;font-weight:700" class="remove-item" data-id="${id}">Remove</button>
+          </div>
+        `;
+        cartBody.appendChild(el);
+      }
+      $('#cartTotal').textContent = '₹' + total;
+      if(items>0){
+        cartCountEl.style.display='flex';
+        cartCountEl.textContent = items;
+        floating.style.display='flex';
+      } else {
+        cartCountEl.style.display='none';
+        floating.style.display='none';
+      }
+    }
+
+    // Hook up plus/minus on each card
+    document.addEventListener('click', function(e){
+      // plus
+      if(e.target.closest('.plus')){
+        const card = e.target.closest('.card-container');
+        const input = card.querySelector('.qty-input');
+        input.value = String(Number(input.value) + 1);
+      }
+      // minus
+      if(e.target.closest('.minus')){
+        const card = e.target.closest('.card-container');
+        const input = card.querySelector('.qty-input');
+        input.value = String(Math.max(0, Number(input.value) - 1));
+      }
+      // add to cart
+      if(e.target.closest('.add-cart')){
+        const card = e.target.closest('.card-container');
+        const id = card.dataset.id;
+        const name = card.dataset.name;
+        const price = Number(card.dataset.price);
+        const img = card.querySelector('img').src;
+        const qty = Math.max(0, Number(card.querySelector('.qty-input').value));
+        if(qty <= 0){
+          alert('Please select quantity first (use + button).');
+          return;
+        }
+        if(cart[id]){
+          cart[id].qty += qty;
+        } else {
+          cart[id] = { id, name, price, qty, img };
+        }
+        // reset qty input to 0
+        card.querySelector('.qty-input').value = '0';
+        updateCartUI();
+      }
+
+      // remove item
+      if(e.target.closest('.remove-item')){
+        const id = e.target.closest('.remove-item').dataset.id;
+        delete cart[id];
+        updateCartUI();
+      }
+
+      // small-increase/decrease in cart
+      if(e.target.closest('.small-increase')){
+        const id = e.target.closest('.small-increase').dataset.id;
+        cart[id].qty += 1;
+        updateCartUI();
+      }
+      if(e.target.closest('.small-decrease')){
+        const id = e.target.closest('.small-decrease').dataset.id;
+        cart[id].qty = Math.max(0, cart[id].qty - 1);
+        if(cart[id].qty === 0) delete cart[id];
+        updateCartUI();
+      }
+    });
+
+    // Open/close cart buttons
+    $('#openCartBtn').addEventListener('click', ()=> {
+      const floating = $('#floatingCart');
+      if(Object.keys(cart).length === 0){
+        alert('Cart empty. Add items first.');
+        return;
+      }
+      floating.style.display = floating.style.display === 'flex' ? 'none' : 'flex';
+    });
+    $('#closeCart').addEventListener('click', ()=> $('#floatingCart').style.display='none' );
+
+    // Checkout
+    $('#checkoutBtn').addEventListener('click', () => {
+      if(Object.keys(cart).length === 0){ alert('Cart empty.'); return; }
+      // For trial page just show summary
+      let msg = 'Order Summary:\\n';
+      let total = 0;
+      for(const id in cart){
+        const it = cart[id];
+        msg += `${it.name} × ${it.qty} = ₹${it.price * it.qty}\\n`;
+        total += it.price * it.qty;
+      }
+      msg += `\\nTotal: ₹${total}\\n\\n(Trial page) Proceed to implement checkout.`;
+      alert(msg);
+    });
+
+    // Category filter
+    $$('.cat-btn').forEach(b=>{
+      b.addEventListener('click', ()=>{
+        $$('.cat-btn').forEach(x=>x.classList.remove('active'));
+        b.classList.add('active');
+        const cat = b.dataset.cat;
+        $$('.card-container').forEach(card=>{
+          if(cat === 'all' || card.dataset.cat === cat) card.style.display = '';
+          else card.style.display = 'none';
+        });
+        // smooth scroll first visible product into view on small screens
+        const first = document.querySelector('.card-container:not([style*="display: none"])');
+        if(first) first.scrollIntoView({behavior:'smooth', block:'center'});
+      });
+    });
+
+    // hero slider simple rotate (change image every 3s)
+    const heroImages = [
+      "https://images.unsplash.com/photo-1604908177522-f1b5aa0eba8f?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=0c2706f7f78f1f88e2f520a3700b2b1d",
+      "https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=0f9d0b5f1a3d6bf8a6fdf9f14b8b3c6c",
+      "https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=0f9d0b5f1a3d6bf8a6fdf9f14b8b3c6c",
+      "https://st2.depositphotos.com/1744187/5192/i/950/depositphotos_51925843-stock-photo-sandwich-isolated-on-white-background.jpg"
+    ];
+    let hi=0;
+    setInterval(()=>{
+      hi=(hi+1)%heroImages.length;
+      const img = document.querySelector('.hero-slider img');
+      img.style.opacity = 0.2;
+      setTimeout(()=>{ img.src = heroImages[hi]; img.style.opacity=1 }, 220);
+    }, 3500);
+
+    // scroll to menu
+    function scrollToMenu(){ document.getElementById('menu').scrollIntoView({behavior:'smooth'}); }
+  </script>
+</body>
+</html>

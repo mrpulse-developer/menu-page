@@ -1,107 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MrPulse - Menu Page</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <!-- SEO -->
+    <meta name="description" content="Template description here" />
+    <meta name="author" content="Mr Pulse" />
 
-    <!-- Custom Styles -->
-    <link rel="stylesheet" href="css/sidebar.css" />
+    <title>Fast Food - by Mr Pulse</title>
+
     <link rel="stylesheet" href="css/navbar.css" />
-</head>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Add this inside <head> -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
 
-<body>
-    <!-- Header -->
-    <header class="main-header">
-        <nav class="main-navbar">
-            <div class="left-side">
-                <button id="hamburgerBtn" class="hamburger-btn" aria-label="Toggle navigation">
-                    <i class="fas fa-bars"></i>
-                </button>
-                <a href="#" class="logo">MrPulse</a>
-            </div>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-            <ul class="main-nav-link">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Menu</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Offers</a></li>
-                <li><a href="#">Profile</a></li>
-                <li><a href="#">Contact</a></li>
-                <li><a href="#">Services</a></li>
-            </ul>
+      body {
+        font-family: "Poppins", sans-serif;
+        background: #f9f9f9;
+        color: #333;
+      }
+    </style>
+  </head>
 
-            <div class="main-nav-btn">
-                <button class="btn login-btn">Login</button>
-                <button class="btn signup-btn">Sign up</button>
-            </div>
-        </nav>
-    </header>
-
-    <!-- Sidebar -->
-    <aside id="sidebar" class="sidebar" aria-hidden="true">
-        <div class="sidebar-header">
-            <div class="profile">
-                <img src="assets/my_logo.jpeg" alt="User profile picture" class="profile-img" />
-                <h3 class="profile-name">Mr Pulse</h3>
-                <p class="profile-email">mrpulse@example.com</p>
-            </div>
-            <button id="closeBtn" class="close-btn" aria-label="Close sidebar">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
+  <body>
+    
+    <header class="header">
+      <nav class="navbar">
+        <button class="menu-btn" aria-label="Toggle Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+        <!-- Logo -->
+        <div class="navbar__logo">
+          <!-- <i class="fa-solid fa-utensils logo__icon"></i> -->
+          <h1 class="logo__text">Foody</h1>
         </div>
 
-        <ul class="sidebar-links">
-            <li>
-                <a href="#"><i class="fas fa-home"></i> Home</a>
-            </li>
-            <li>
-                <a href="#"><i class="fas fa-utensils"></i> Menu</a>
-            </li>
-            <li>
-                <a href="#"><i class="fas fa-info-circle"></i> About</a>
-            </li>
-            <li>
-                <a href="#"><i class="fas fa-tags"></i> Offers</a>
-            </li>
-            <li>
-                <a href="#"><i class="fas fa-user"></i> Profile</a>
-            </li>
-            <li>
-                <a href="#"><i class="fas fa-envelope"></i> Contact</a>
-            </li>
-            <li>
-                <a href="#"><i class="fas fa-cogs"></i> Services</a>
-            </li>
+        <!-- Nav Links -->
+        <ul class="navbar__links">
+          <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">About Us</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">Contact Us</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">Our Menu</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">Our Blog</a></li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">Our Services</a>
+          </li>
         </ul>
 
-        <div class="sidebar-footer">
-            <button class=" logout-btn">
-                <i class="fas fa-sign-out-alt"></i> Logout
-            </button>
+        <!-- Right Side Buttons -->
+        <div class="navbar__actions">
+          <button class="btn btn-profile" aria-label="Profile">
+            <i class="fa-solid fa-user"></i>
+          </button>
+          <button class="btn btn-order">Order</button>
         </div>
-    </aside>
 
-    <!-- Script -->
-    <script>
-        const sidebar = document.getElementById("sidebar");
-        const hamburgerBtn = document.getElementById("hamburgerBtn");
-        const closeBtn = document.getElementById("closeBtn");
+      
+      </nav>
+    </header>
 
-        hamburgerBtn.addEventListener("click", () => {
-            sidebar.classList.add("active");
-            sidebar.setAttribute("aria-hidden", "false");
-        });
-
-        closeBtn.addEventListener("click", () => {
-            sidebar.classList.remove("active");
-            sidebar.setAttribute("aria-hidden", "true");
-        });
-    </script>
-</body>
-
+    <script src="js/main.js"></script>
+  </body>
 </html>

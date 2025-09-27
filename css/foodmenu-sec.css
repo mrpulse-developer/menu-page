@@ -1,0 +1,102 @@
+/* Menu Section */
+.menu {
+  padding: 60px 20px;
+  background: #fffaf8;
+}
+
+.menu .container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Header */
+.menu-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.menu-title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.menu-subtitle {
+  color: #555;
+  font-size: 1.1rem;
+}
+
+/* Categories */
+.menu-categories {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.menu-btn {
+  padding: 10px 20px;
+  border: 1px solid #e63946;
+  background: transparent;
+  color: #e63946;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.menu-btn:hover,
+.menu-btn.active {
+  background: #e63946;
+  color: #fff;
+}
+
+/* Menu Grid */
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 24px;
+}
+
+.menu-card {
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s;
+  cursor: pointer;
+}
+
+.menu-card:hover {
+  transform: translateY(-5px);
+}
+
+.menu-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.menu-info {
+  padding: 16px;
+  text-align: left;
+}
+
+.menu-name {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.menu-desc {
+  font-size: 0.95rem;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+.menu-price {
+  font-weight: 700;
+  color: #e63946;
+  font-size: 1.1rem;
+}

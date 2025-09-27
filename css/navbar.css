@@ -1,7 +1,7 @@
 /* Layout */
 .header {
   width: 100%;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   position: sticky;
   top: 0;
   background: #fff;
@@ -9,7 +9,7 @@
 }
 
 .navbar {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -22,14 +22,13 @@
 .navbar__left {
   display: flex;
   align-items: center;
-  gap: 2px; /* menu aur logo ke beech sirf 2px space */
+  gap: 8px;
 }
 
 /* Logo */
 .navbar__logo {
   display: flex;
   align-items: center;
-  /* gap hataya, sirf text rahega */
 }
 
 .logo__text {
@@ -41,7 +40,7 @@
 /* Nav Links */
 .navbar__links {
   display: flex;
-  gap: 18px;
+  gap: 20px;
   list-style: none;
 }
 
@@ -75,6 +74,16 @@
 .btn-profile {
   background: #f8f8f8;
   color: #333;
+  border: 1px solid #333;
+  border-radius: 50%; /* pure circle */
+  width: 30px; /* fixed width */
+  height: 30px; /* fixed height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem; /* icon size */
+  padding: 0; /* no extra padding */
+  cursor: pointer;
 }
 
 .btn-profile:hover {

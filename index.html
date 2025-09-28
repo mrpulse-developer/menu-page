@@ -1,386 +1,478 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-    <!-- SEO -->
-    <meta name="description" content="Template description here" />
-    <meta name="author" content="Mr Pulse" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-    <title>Fast Food - by Mr Pulse</title>
+  <!-- SEO -->
+  <meta name="description" content="Template description here" />
+  <meta name="author" content="Mr Pulse" />
 
-    <link rel="stylesheet" href="css/navbar.css" />
-    <link rel="stylesheet" href="css/hero-sec.css" />
-    <link rel="stylesheet" href="css/popular-sec.css" />
-    <link rel="stylesheet" href="css/services-sec.css" />
-    <link rel="stylesheet" href="css/foodmenu-sec.css" />
+  <title>Fast Food - by Mr Pulse</title>
 
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
-      rel="stylesheet"
-    />
-    <!-- Add this inside <head> -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-    />
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <link rel="stylesheet" href="css/navbar.css" />
+  <link rel="stylesheet" href="css/hero-sec.css" />
+  <link rel="stylesheet" href="css/popular-sec.css" />
+  <link rel="stylesheet" href="css/services-sec.css" />
+  <link rel="stylesheet" href="css/foodmenu-sec.css" />
+  <link rel="stylesheet" href="css/profile-pop-sec.css" />
 
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
+  <!-- Add this inside <head> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-      body {
-        font-family: "Poppins", sans-serif;
-        background: #f9f9f9;
-        color: #333;
-      }
-    </style>
-  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-  <body>
-    <header class="header">
-      <nav class="navbar">
-        <div class="navbar__left">
-          <button class="menu-btn" aria-label="Toggle Menu">
-            <i class="fa-solid fa-bars"></i>
-          </button>
-          <div class="navbar__logo">
-            <h1 class="logo__text">Foody</h1>
+    body {
+      font-family: "Poppins", sans-serif;
+      background: #f9f9f9;
+      color: #333;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="header">
+    <nav class="navbar">
+      <div class="navbar__left">
+        <button class="menu-btn" aria-label="Toggle Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+        <div class="navbar__logo">
+          <h1 class="logo__text">Foody</h1>
+        </div>
+      </div>
+
+      <!-- Nav Links -->
+      <ul class="navbar__links">
+        <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
+        <li class="nav-item"><a href="#about" class="nav-link">About Us</a></li>
+        <li class="nav-item"><a href="#contact" class="nav-link">Contact Us</a></li>
+        <li class="nav-item"><a href="#menu" class="nav-link">Our Menu</a></li>
+        <li class="nav-item"><a href="#blog" class="nav-link">Our Blog</a></li>
+        <li class="nav-item">
+          <a href="#services" class="nav-link">Our Services</a>
+        </li>
+      </ul>
+
+      <!-- Right Side Buttons -->
+      <div class="navbar__actions">
+        <button class="btn-profile" id="profileBtn">
+          <i class="fa-solid fa-user"></i> Profile
+        </button>
+
+      </div>
+    </nav>
+  </header>
+  
+
+  <!-- Profile Popup (Hidden by default) -->
+  <div class="profile-popup hidden" id="profilePopup">
+    <div class="popup-content">
+      <button class="close-btn" id="closePopup">&times;</button>
+      <h3>👤 Welcome</h3>
+      <ul class="popup-menu">
+        <li><i class="fa-solid fa-right-to-bracket"></i> Login</li>
+        <li><i class="fa-solid fa-user-plus"></i> Sign Up</li>
+        <li><i class="fa-solid fa-gear"></i> Settings</li>
+        <li><i class="fa-solid fa-box"></i> My Orders</li>
+        <li><i class="fa-solid fa-right-from-bracket"></i> Logout</li>
+      </ul>
+    </div>
+  </div>
+  <main>
+    <section class="hero">
+      <!-- Left Content -->
+      <div class="hero__left">
+        <span class="hero__tagline">🍴 100% Fresh & Tasty</span>
+        <h2>We Serve The Taste You Love 😍</h2>
+        <p>
+          Fresh, delicious, and healthy meals made with love. Explore our menu
+          and order your favorite dishes today.
+        </p>
+
+        <!-- Social Media -->
+        <div class="hero__socials">
+          <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#"><i class="fa-brands fa-twitter"></i></a>
+          <a href="#"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+
+        <!-- Buttons -->
+        <div class="hero__buttons">
+          <button class="btn btn-order">Order</button>
+          <button class="btn btn-secondary">View Menu</button>
+        </div>
+      </div>
+
+      <!-- Right Content -->
+      <div class="hero__right">
+        <div class="hero__image-box">
+          <img src="assets/chef.webp" alt="Delicious Food" class="hero__image" />
+        </div>
+
+        <!-- List (Desktop) -->
+        <div class="hero__list-box">
+          <ul class="hero__list">
+            <li>🍽️ Dishes</li>
+            <li>🍩 Dessert</li>
+            <li>🥤 Drinks</li>
+            <li>🍱 Platter</li>
+            <li>🍪 Snacks</li>
+          </ul>
+
+          <!-- Swiper Slider (Mobile) -->
+          <div class="swiper heroSwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">🍽️ Dishes</div>
+              <div class="swiper-slide">🍩 Dessert</div>
+              <div class="swiper-slide">🥤 Drinks</div>
+              <div class="swiper-slide">🍱 Platter</div>
+              <div class="swiper-slide">🍪 Snacks</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="popular-dishes">
+      <div class="container">
+        <!-- Section Header -->
+        <div class="info-container center">
+          <div class="info-sec">
+            <h2 class="section-title">🍴 Popular Dishes</h2>
+          </div>
+
+          <!-- Swiper Buttons -->
+          <div class="swip-btn">
+            <button class="dish-prev">
+              <i class="fa-solid fa-chevron-left"></i>
+            </button>
+            <button class="dish-next">
+              <i class="fa-solid fa-chevron-right"></i>
+            </button>
           </div>
         </div>
 
-        <!-- Nav Links -->
-        <ul class="navbar__links">
-          <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
-          <li class="nav-item"><a href="#" class="nav-link">About Us</a></li>
-          <li class="nav-item"><a href="#" class="nav-link">Contact Us</a></li>
-          <li class="nav-item"><a href="#" class="nav-link">Our Menu</a></li>
-          <li class="nav-item"><a href="#" class="nav-link">Our Blog</a></li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">Our Services</a>
-          </li>
-        </ul>
+        <!-- Scrollable Wrapper -->
+        <div class="dishes-scroll">
+          <!-- 1 -->
+          <div class="dish-card">
+            <img src="assets/pizza.jpeg" alt="Spicy Pizza" class="dish-img" />
+            <h3 class="dish-name">Spicy Pizza</h3>
+            <p class="dish-desc">Cheesy, spicy and loaded with toppings.</p>
+            <span class="dish-price">$12</span>
+          </div>
 
-        <!-- Right Side Buttons -->
-        <div class="navbar__actions">
-          <button class="btn-profile">
-            <i class="fa-solid fa-user"></i> Profile
-          </button>
+          <!-- 2 -->
+          <div class="dish-card">
+            <img src="assets/WhatsApp Image 2025-09-25 at 8.04.43 PM.jpeg" alt="Fresh Salad" class="dish-img" />
+            <h3 class="dish-name">Fresh Salad</h3>
+            <p class="dish-desc">Green, healthy and refreshing.</p>
+            <span class="dish-price">$8</span>
+          </div>
+
+          <!-- 3 -->
+          <div class="dish-card">
+            <img src="assets/burger.jpeg" alt="Juicy Burger" class="dish-img" />
+            <h3 class="dish-name">Juicy Burger</h3>
+            <p class="dish-desc">Double patty, cheese & fries combo.</p>
+            <span class="dish-price">$10</span>
+          </div>
+
+          <!-- 4 -->
+          <div class="dish-card">
+            <img src="assets/patato.jpeg" alt="Pasta Alfredo" class="dish-img" />
+            <h3 class="dish-name">Pasta Alfredo</h3>
+            <p class="dish-desc">Creamy & rich Italian pasta.</p>
+            <span class="dish-price">$15</span>
+          </div>
+
+          <!-- 5 -->
+          <div class="dish-card">
+            <img src="assets/sandwhich.jpeg" alt="Grilled Sandwich" class="dish-img" />
+            <h3 class="dish-name">Grilled Sandwich</h3>
+            <p class="dish-desc">
+              Toasted bread stuffed with cheese & veggies.
+            </p>
+            <span class="dish-price">$7</span>
+          </div>
+
+          <!-- 6 -->
+          <div class="dish-card">
+            <img src="assets/chiken.jpeg" alt="Chicken Wings" class="dish-img" />
+            <h3 class="dish-name">Chicken Wings</h3>
+            <p class="dish-desc">Crispy, spicy wings with special sauce.</p>
+            <span class="dish-price">$11</span>
+          </div>
+
+          <!-- 7 -->
+          <div class="dish-card">
+            <img src="assets/dish7.jpg" alt="Tacos" class="dish-img" />
+            <h3 class="dish-name">Mexican Tacos</h3>
+            <p class="dish-desc">Soft tortillas with spicy fillings.</p>
+            <span class="dish-price">$9</span>
+          </div>
+
+          <!-- 8 -->
+          <div class="dish-card">
+            <img src="assets/dish8.jpg" alt="Sushi Platter" class="dish-img" />
+            <h3 class="dish-name">Sushi Platter</h3>
+            <p class="dish-desc">
+              Fresh rolls served with wasabi & soy sauce.
+            </p>
+            <span class="dish-price">$18</span>
+          </div>
+
+          <!-- 9 -->
+          <div class="dish-card">
+            <img src="assets/dish9.jpg" alt="Chocolate Cake" class="dish-img" />
+            <h3 class="dish-name">Chocolate Cake</h3>
+            <p class="dish-desc">Moist, rich & topped with choco cream.</p>
+            <span class="dish-price">$6</span>
+          </div>
+
+          <!-- 10 -->
+          <div class="dish-card">
+            <img src="assets/dish10.jpg" alt="Ice Cream Sundae" class="dish-img" />
+            <h3 class="dish-name">Ice Cream Sundae</h3>
+            <p class="dish-desc">Vanilla, chocolate & nuts topping.</p>
+            <span class="dish-price">$5</span>
+          </div>
         </div>
-      </nav>
-    </header>
-    <main>
-      <section class="hero">
-        <!-- Left Content -->
-        <div class="hero__left">
-          <span class="hero__tagline">🍴 100% Fresh & Tasty</span>
-          <h2>We Serve The Taste You Love 😍</h2>
-          <p>
-            Fresh, delicious, and healthy meals made with love. Explore our menu
-            and order your favorite dishes today.
+      </div>
+    </section>
+
+    <section class="services" id="services">
+      <div class="container">
+        <!-- Left: Image -->
+        <div class="services__image">
+          <img src="assets/services.png" alt="Our Services" />
+        </div>
+
+        <!-- Right: Content -->
+        <div class="services__content">
+          <h2 class="services__title">✨ Our Services</h2>
+          <p class="services__desc">
+            We provide the best food delivery and dining experience, crafted
+            to satisfy your cravings anytime.
           </p>
 
-          <!-- Social Media -->
-          <div class="hero__socials">
-            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-            <a href="#"><i class="fa-brands fa-instagram"></i></a>
-            <a href="#"><i class="fa-brands fa-twitter"></i></a>
-            <a href="#"><i class="fa-brands fa-youtube"></i></a>
-          </div>
+          <!-- Services List -->
+          <ul class="services__list">
+            <li>🚚 Fast Home Delivery</li>
+            <li>🍴 Dine-in Experience</li>
+            <li>📦 Takeaway Services</li>
+            <li>👨‍🍳 Catering & Events</li>
+            <li>📱 Online Ordering</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-          <!-- Buttons -->
-          <div class="hero__buttons">
-            <button class="btn btn-order">Order</button>
-            <button class="btn btn-secondary">View Menu</button>
-          </div>
+    <section class="menu" id="menu">
+      <div class="container">
+        <!-- Section Header -->
+        <div class="menu-header">
+          <h2 class="menu-title">📖 Our Menu</h2>
+          <p class="menu-subtitle">Discover our delicious food categories</p>
         </div>
 
-        <!-- Right Content -->
-        <div class="hero__right">
-          <div class="hero__image-box">
-            <img
-              src="assets/chef.webp"
-              alt="Delicious Food"
-              class="hero__image"
-            />
+        <!-- Menu Categories -->
+        <div class="menu-categories">
+          <button class="menu-btn active">
+            <i class="fa-solid fa-layer-group"></i>
+            <span>Categories</span>
+            <button class="menu-btn">
+              <i class="fa-solid fa-bread-slice"></i>
+              <span>Bread</span>
+            </button>
+            <button class="menu-btn">
+              <i class="fa-solid fa-drumstick-bite"></i>
+              <span>Chicken</span>
+            </button>
+            <button class="menu-btn">
+              <i class="fa-solid fa-burger"></i>
+              <span>Burger</span>
+            </button>
+            <button class="menu-btn">
+              <i class="fa-solid fa-pizza-slice"></i>
+              <span>Pizza</span>
+            </button>
+            <button class="menu-btn">
+              <i class="fa-solid fa-ice-cream"></i>
+              <span>Dessert</span>
+            </button>
+            <button class="menu-btn">
+              <i class="fa-solid fa-mug-hot"></i>
+              <span>Drinks</span>
+            </button>
+        </div>
+
+        <!-- Menu Grid -->
+        <div class="menu-grid">
+          <!-- Item -->
+          <div class="menu-card">
+            <img src="assets/burger.jpeg" alt="Dish" class="menu-img" />
+            <div class="menu-info">
+              <h3 class="menu-name">Bruschetta</h3>
+              <p class="menu-desc">Grilled bread with tomato & basil</p>
+              <span class="menu-price">$6</span>
+
+              <!-- Add to Cart -->
+              <div class="menu-actions">
+                <button class="add-btn"><i class="fa-solid fa-plus"></i></button>
+                <div class="counter hidden">
+                  <button class="decrease">-</button>
+                  <span class="count">1</span>
+                  <button class="increase">+</button>
+                </div>
+              </div>
+            </div>
           </div>
 
-          <!-- List (Desktop) -->
-          <div class="hero__list-box">
-            <ul class="hero__list">
-              <li>🍽️ Dishes</li>
-              <li>🍩 Dessert</li>
-              <li>🥤 Drinks</li>
-              <li>🍱 Platter</li>
-              <li>🍪 Snacks</li>
-            </ul>
+          <div class="menu-card">
+            <img src="assets/sandwhich.jpeg" alt="Dish" class="menu-img" />
+            <div class="menu-info">
+              <h3 class="menu-name">Garlic Bread</h3>
+              <p class="menu-desc">Crispy bread with garlic butter</p>
+              <span class="menu-price">$5</span>
+              <div class="menu-actions">
+                <button class="add-btn"><i class="fa-solid fa-plus"></i></button>
+                <div class="counter hidden">
+                  <button class="decrease">-</button>
+                  <span class="count">1</span>
+                  <button class="increase">+</button>
+                </div>
+              </div>
+            </div>
+          </div>
 
-            <!-- Swiper Slider (Mobile) -->
-            <div class="swiper heroSwiper">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide">🍽️ Dishes</div>
-                <div class="swiper-slide">🍩 Dessert</div>
-                <div class="swiper-slide">🥤 Drinks</div>
-                <div class="swiper-slide">🍱 Platter</div>
-                <div class="swiper-slide">🍪 Snacks</div>
+          <div class="menu-card">
+            <img src="assets/WhatsApp Image 2025-09-25 at 8.04.47 PM.jpeg" alt="Dish" class="menu-img" />
+            <div class="menu-info">
+              <h3 class="menu-name">Caesar Salad</h3>
+              <p class="menu-desc">Fresh lettuce, croutons & parmesan</p>
+              <span class="menu-price">$8</span>
+              <div class="menu-actions">
+                <button class="add-btn"><i class="fa-solid fa-plus"></i></button>
+                <div class="counter hidden">
+                  <button class="decrease">-</button>
+                  <span class="count">1</span>
+                  <button class="increase">+</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="menu-card">
+            <img src="assets/WhatsApp Image 2025-09-25 at 8.04.56 PM.jpeg" alt="Dish" class="menu-img" />
+            <div class="menu-info">
+              <h3 class="menu-name">Soup of the Day</h3>
+              <p class="menu-desc">Served hot and fresh</p>
+              <span class="menu-price">$7</span>
+              <div class="menu-actions">
+                <button class="add-btn"><i class="fa-solid fa-plus"></i></button>
+                <div class="counter hidden">
+                  <button class="decrease">-</button>
+                  <span class="count">1</span>
+                  <button class="increase">+</button>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section class="popular-dishes">
-        <div class="container">
-          <!-- Section Header -->
-          <div class="info-container center">
-            <div class="info-sec">
-              <h2 class="section-title">🍴 Popular Dishes</h2>
-            </div>
+  </main>
 
-            <!-- Swiper Buttons -->
-            <div class="swip-btn">
-              <button class="dish-prev">
-                <i class="fa-solid fa-chevron-left"></i>
-              </button>
-              <button class="dish-next">
-                <i class="fa-solid fa-chevron-right"></i>
-              </button>
-            </div>
-          </div>
 
-          <!-- Scrollable Wrapper -->
-          <div class="dishes-scroll">
-            <!-- 1 -->
-            <div class="dish-card">
-              <img src="assets/pizza.jpeg" alt="Spicy Pizza" class="dish-img" />
-              <h3 class="dish-name">Spicy Pizza</h3>
-              <p class="dish-desc">Cheesy, spicy and loaded with toppings.</p>
-              <span class="dish-price">$12</span>
-            </div>
+  <!-- Swiper js auto slider -->
+  <script>
+    var swiper = new Swiper(".heroSwiper", {
+      slidesPerView: "auto", // har slide apni width lega
+      spaceBetween: 20, // gap between slides
+      loop: true, // infinite loop
+      freeMode: true, // smooth scroll
+      autoplay: {
+        delay: 0, // no delay
+        disableOnInteraction: false,
+      },
+      speed: 4000, // smooth continuous speed
+      allowTouchMove: false, // user swipe disable (sirf auto move karega)
+    });
+  </script>
+  <script>
+    document.querySelectorAll(".menu-card").forEach(card => {
+      const addBtn = card.querySelector(".add-btn");
+      const counter = card.querySelector(".counter");
+      const countEl = card.querySelector(".count");
+      const increase = card.querySelector(".increase");
+      const decrease = card.querySelector(".decrease");
 
-            <!-- 2 -->
-            <div class="dish-card">
-              <img
-                src="assets/WhatsApp Image 2025-09-25 at 8.04.43 PM.jpeg"
-                alt="Fresh Salad"
-                class="dish-img"
-              />
-              <h3 class="dish-name">Fresh Salad</h3>
-              <p class="dish-desc">Green, healthy and refreshing.</p>
-              <span class="dish-price">$8</span>
-            </div>
+      let count = 1;
 
-            <!-- 3 -->
-            <div class="dish-card">
-              <img
-                src="assets/burger.jpeg"
-                alt="Juicy Burger"
-                class="dish-img"
-              />
-              <h3 class="dish-name">Juicy Burger</h3>
-              <p class="dish-desc">Double patty, cheese & fries combo.</p>
-              <span class="dish-price">$10</span>
-            </div>
-
-            <!-- 4 -->
-            <div class="dish-card">
-              <img
-                src="assets/patato.jpeg"
-                alt="Pasta Alfredo"
-                class="dish-img"
-              />
-              <h3 class="dish-name">Pasta Alfredo</h3>
-              <p class="dish-desc">Creamy & rich Italian pasta.</p>
-              <span class="dish-price">$15</span>
-            </div>
-
-            <!-- 5 -->
-            <div class="dish-card">
-              <img
-                src="assets/sandwhich.jpeg"
-                alt="Grilled Sandwich"
-                class="dish-img"
-              />
-              <h3 class="dish-name">Grilled Sandwich</h3>
-              <p class="dish-desc">
-                Toasted bread stuffed with cheese & veggies.
-              </p>
-              <span class="dish-price">$7</span>
-            </div>
-
-            <!-- 6 -->
-            <div class="dish-card">
-              <img
-                src="assets/chiken.jpeg"
-                alt="Chicken Wings"
-                class="dish-img"
-              />
-              <h3 class="dish-name">Chicken Wings</h3>
-              <p class="dish-desc">Crispy, spicy wings with special sauce.</p>
-              <span class="dish-price">$11</span>
-            </div>
-
-            <!-- 7 -->
-            <div class="dish-card">
-              <img src="assets/dish7.jpg" alt="Tacos" class="dish-img" />
-              <h3 class="dish-name">Mexican Tacos</h3>
-              <p class="dish-desc">Soft tortillas with spicy fillings.</p>
-              <span class="dish-price">$9</span>
-            </div>
-
-            <!-- 8 -->
-            <div class="dish-card">
-              <img
-                src="assets/dish8.jpg"
-                alt="Sushi Platter"
-                class="dish-img"
-              />
-              <h3 class="dish-name">Sushi Platter</h3>
-              <p class="dish-desc">
-                Fresh rolls served with wasabi & soy sauce.
-              </p>
-              <span class="dish-price">$18</span>
-            </div>
-
-            <!-- 9 -->
-            <div class="dish-card">
-              <img
-                src="assets/dish9.jpg"
-                alt="Chocolate Cake"
-                class="dish-img"
-              />
-              <h3 class="dish-name">Chocolate Cake</h3>
-              <p class="dish-desc">Moist, rich & topped with choco cream.</p>
-              <span class="dish-price">$6</span>
-            </div>
-
-            <!-- 10 -->
-            <div class="dish-card">
-              <img
-                src="assets/dish10.jpg"
-                alt="Ice Cream Sundae"
-                class="dish-img"
-              />
-              <h3 class="dish-name">Ice Cream Sundae</h3>
-              <p class="dish-desc">Vanilla, chocolate & nuts topping.</p>
-              <span class="dish-price">$5</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="services">
-        <div class="container">
-          <!-- Left: Image -->
-          <div class="services__image">
-            <img src="assets/services.png" alt="Our Services" />
-          </div>
-
-          <!-- Right: Content -->
-          <div class="services__content">
-            <h2 class="services__title">✨ Our Services</h2>
-            <p class="services__desc">
-              We provide the best food delivery and dining experience, crafted
-              to satisfy your cravings anytime.
-            </p>
-
-            <!-- Services List -->
-            <ul class="services__list">
-              <li>🚚 Fast Home Delivery</li>
-              <li>🍴 Dine-in Experience</li>
-              <li>📦 Takeaway Services</li>
-              <li>👨‍🍳 Catering & Events</li>
-              <li>📱 Online Ordering</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <section class="menu">
-        <div class="container">
-          <!-- Section Header -->
-          <div class="menu-header">
-            <h2 class="menu-title">📖 Our Menu</h2>
-            <p class="menu-subtitle">Discover our delicious food categories</p>
-          </div>
-
-          <!-- Menu Categories -->
-          <div class="menu-categories">
-            <button class="menu-btn active">Starters</button>
-            <button class="menu-btn">Main Course</button>
-            <button class="menu-btn">Desserts</button>
-            <button class="menu-btn">Drinks</button>
-          </div>
-
-          <!-- Menu Grid -->
-          <div class="menu-grid">
-            <!-- Item -->
-            <div class="menu-card">
-              <img src="assets/starter1.jpg" alt="Dish" class="menu-img" />
-              <div class="menu-info">
-                <h3 class="menu-name">Bruschetta</h3>
-                <p class="menu-desc">Grilled bread with tomato & basil</p>
-                <span class="menu-price">$6</span>
-              </div>
-            </div>
-
-            <div class="menu-card">
-              <img src="assets/starter2.jpg" alt="Dish" class="menu-img" />
-              <div class="menu-info">
-                <h3 class="menu-name">Garlic Bread</h3>
-                <p class="menu-desc">Crispy bread with garlic butter</p>
-                <span class="menu-price">$5</span>
-              </div>
-            </div>
-
-            <div class="menu-card">
-              <img src="assets/starter3.jpg" alt="Dish" class="menu-img" />
-              <div class="menu-info">
-                <h3 class="menu-name">Caesar Salad</h3>
-                <p class="menu-desc">Fresh lettuce, croutons & parmesan</p>
-                <span class="menu-price">$8</span>
-              </div>
-            </div>
-
-            <div class="menu-card">
-              <img src="assets/starter4.jpg" alt="Dish" class="menu-img" />
-              <div class="menu-info">
-                <h3 class="menu-name">Soup of the Day</h3>
-                <p class="menu-desc">Served hot and fresh</p>
-                <span class="menu-price">$7</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <!-- Swiper js auto slider -->
-    <script>
-      var swiper = new Swiper(".heroSwiper", {
-        slidesPerView: "auto", // har slide apni width lega
-        spaceBetween: 20, // gap between slides
-        loop: true, // infinite loop
-        freeMode: true, // smooth scroll
-        autoplay: {
-          delay: 0, // no delay
-          disableOnInteraction: false,
-        },
-        speed: 4000, // smooth continuous speed
-        allowTouchMove: false, // user swipe disable (sirf auto move karega)
+      addBtn.addEventListener("click", () => {
+        addBtn.style.display = "none";
+        counter.classList.remove("hidden");
       });
-    </script>
 
-    <script src="js/main.js"></script>
-  </body>
+      increase.addEventListener("click", () => {
+        count++;
+        countEl.textContent = count;
+      });
+
+      decrease.addEventListener("click", () => {
+        if (count > 1) {
+          count--;
+          countEl.textContent = count;
+        } else {
+          // reset back to add button
+          count = 1;
+          counter.classList.add("hidden");
+          addBtn.style.display = "inline-block";
+        }
+      });
+    });
+  </script>
+  <script>
+    const profileBtn = document.getElementById("profileBtn");
+    const profilePopup = document.getElementById("profilePopup");
+    const closePopup = document.getElementById("closePopup");
+
+    // Show popup
+    profileBtn.addEventListener("click", () => {
+      profilePopup.classList.remove("hidden");
+    });
+
+    // Hide popup
+    closePopup.addEventListener("click", () => {
+      profilePopup.classList.add("hidden");
+    });
+
+    // Close when clicking outside
+    window.addEventListener("click", (e) => {
+      if (e.target === profilePopup) {
+        profilePopup.classList.add("hidden");
+      }
+    });
+  </script>
+  <script src="js/main.js"></script>
+</body>
+
 </html>

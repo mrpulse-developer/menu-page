@@ -1,33 +1,49 @@
+/* ============================
+   Blog Section
+============================ */
 .blog-section {
   padding: 60px 20px;
-  background: #fafafa;
-  text-align: center;
+  background: #fff7f0;
+}
+
+.blog-section .container {
+  max-width: 1200px;
+  margin: auto;
 }
 
 .section-title {
-  font-size: 2rem;
+  text-align: center;
+  font-size: 2.2rem;
   font-weight: 800;
+  color: #1a1a1a;
   margin-bottom: 10px;
 }
 
 .section-subtitle {
+  text-align: center;
+  color: #555;
   font-size: 1rem;
-  color: #777;
   margin-bottom: 40px;
 }
 
+/* Blog Grid (Desktop) */
 .blog-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 24px;
 }
 
+/* Blog Card */
 .blog-card {
   background: #fff;
-  border-radius: 14px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   overflow: hidden;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
   transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  min-width: 300px; /* needed for swipe mode */
+  flex: 0 0 auto;
 }
 
 .blog-card:hover {
@@ -41,36 +57,61 @@
 }
 
 .blog-content {
-  padding: 18px;
-  text-align: left;
+  padding: 16px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .blog-title {
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   font-weight: 700;
   margin-bottom: 8px;
-  color: #222;
+  color: #1a1a1a;
 }
 
 .blog-desc {
   font-size: 0.95rem;
-  color: #555;
-  margin-bottom: 14px;
-  line-height: 1.5;
+  color: #666;
+  margin-bottom: 12px;
 }
 
 .blog-btn {
-  display: inline-block;
+  align-self: flex-start;
+  padding: 8px 14px;
+  background: #e63946;
+  color: #fff;
+  border-radius: 8px;
   font-size: 0.9rem;
   font-weight: 600;
-  padding: 10px 18px;
-  background: #ff7a1a;
-  color: #fff;
-  border-radius: 20px;
   text-decoration: none;
-  transition: background 0.3s ease;
+  transition: background 0.3s;
 }
 
 .blog-btn:hover {
-  background: #e85e00;
+  background: #c71c2f;
+}
+
+/* ============================
+   Responsive / Mobile Swipe
+============================ */
+@media (max-width: 768px) {
+  .blog-grid {
+    display: flex;           /* enable horizontal scroll */
+    gap: 16px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 10px;
+  }
+
+  .blog-grid::-webkit-scrollbar {
+    display: none; /* hide scrollbar */
+  }
+
+  .blog-card {
+    scroll-snap-align: start;
+    flex: 0 0 80%; /* show ~80% width per card */
+  }
 }

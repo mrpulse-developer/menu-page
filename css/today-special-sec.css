@@ -1,4 +1,6 @@
-/* Deals Section */
+/* =========================
+   Deals Section
+========================= */
 .deals {
   padding: 60px 20px;
   background: #fff7f0;
@@ -26,7 +28,7 @@
   margin-top: 8px;
 }
 
-/* Deals Grid */
+/* Deals Grid (Desktop) */
 .deals-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -42,6 +44,8 @@
   transition: transform 0.3s ease;
   display: flex;
   flex-direction: column;
+  min-width: 280px; /* for mobile swipe */
+  flex-shrink: 0;   /* prevent shrinking */
 }
 
 .deal-card:hover {
@@ -103,4 +107,94 @@
 
 .btn-deal:hover {
   background: #c71c2f;
+}
+
+/* Quantity Box */
+.quantity-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.quantity-box.hidden {
+  display: none;
+}
+
+.quantity-box input {
+  width: 40px;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 600;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 6px;
+  background: #fff;
+}
+
+.qty-btn {
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 6px;
+  background: #ffb703;
+  color: #111;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.qty-btn:hover {
+  background: #e63946;
+  color: #fff;
+}
+
+/* =========================
+   Responsive (Mobile Swipe)
+========================= */
+@media (max-width: 768px) {
+  .deals-grid {
+    display: flex;
+    overflow-x: auto;
+    gap: 16px;
+    scroll-behavior: smooth;
+    padding-bottom: 10px;
+  }
+
+  .deals-grid::-webkit-scrollbar {
+    display: none; /* hide scrollbar */
+  }
+
+  .deal-card {
+    min-width: 240px;
+    max-width: 260px;
+  }
+
+  .deals-title {
+    font-size: 1.8rem;
+  }
+
+  .deal-img {
+    height: 180px;
+  }
+
+  .deal-name {
+    font-size: 1.1rem;
+  }
+
+  .deal-price {
+    font-size: 1rem;
+  }
+
+  .qty-btn {
+    width: 28px;
+    height: 28px;
+    font-size: 0.9rem;
+  }
+
+  .quantity-box input {
+    width: 36px;
+    font-size: 0.9rem;
+  }
 }

@@ -1,4 +1,6 @@
-/* Footer */
+/* ============================
+   Footer Base
+============================ */
 .footer {
   background: #1a1a1a;
   color: #f1f1f1;
@@ -11,7 +13,9 @@
   margin: auto;
 }
 
-/* Newsletter */
+/* ============================
+   Newsletter
+============================ */
 .newsletter {
   text-align: center;
   margin-bottom: 40px;
@@ -27,6 +31,7 @@
   display: flex;
   justify-content: center;
   gap: 10px;
+  flex-wrap: wrap; /* responsive */
 }
 
 .newsletter-form input {
@@ -52,7 +57,9 @@
   background: #ff4b5c;
 }
 
-/* Footer Content */
+/* ============================
+   Footer Content
+============================ */
 .footer-content {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -87,7 +94,9 @@
   color: #e63946;
 }
 
-/* Social Icons */
+/* ============================
+   Social Icons
+============================ */
 .social-icons {
   display: flex;
   gap: 12px;
@@ -109,11 +118,48 @@
   background: #e63946;
 }
 
-/* Bottom */
+/* ============================
+   Footer Bottom
+============================ */
 .footer-bottom {
   text-align: center;
   border-top: 1px solid rgba(255,255,255,0.1);
   padding-top: 14px;
   font-size: 0.9rem;
   color: #aaa;
+}
+
+/* ============================
+   Responsive Design
+============================ */
+@media (max-width: 768px) {
+  .newsletter-form {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .newsletter-form input,
+  .newsletter-form button {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr 1fr; /* 2 columns on tablet */
+    text-align: center;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-content {
+    grid-template-columns: 1fr; /* single column */
+  }
+
+  .footer-col {
+    text-align: center;
+  }
 }

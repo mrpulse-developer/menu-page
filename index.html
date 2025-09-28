@@ -1,442 +1,651 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- SEO -->
+    <meta name="description" content="Template description here" />
+    <meta name="author" content="Mr Pulse" />
 
-  <!-- SEO -->
-  <meta name="description" content="Template description here" />
-  <meta name="author" content="Mr Pulse" />
+    <title>Fast Food - by Mr Pulse</title>
 
-  <title>Fast Food - by Mr Pulse</title>
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/navbar.css" />
+    <link rel="stylesheet" href="css/hero-sec.css" />
+    <link rel="stylesheet" href="css/popular-sec.css" />
+    <link rel="stylesheet" href="css/today-special-sec.css" />
+    <link rel="stylesheet" href="css/services-sec.css" />
+    <link rel="stylesheet" href="css/foodmenu-sec.css" />
+    <link rel="stylesheet" href="css/profile-bar-sec.css" />
+    <link rel="stylesheet" href="css/blog-sec.css" />
+    <link rel="stylesheet" href="css/testimonial-sec.css" />
+    <link rel="stylesheet" href="css/takefedback-sec.css" />
+    <link rel="stylesheet" href="css/team-sec.css" />
+    <link rel="stylesheet" href="css/footer-sec.css" />
+    <link rel="stylesheet" href="css/gallery-sec.css" />
 
-  <link rel="stylesheet" href="css/navbar.css" />
-  <link rel="stylesheet" href="css/hero-sec.css" />
-  <link rel="stylesheet" href="css/popular-sec.css" />
-  <link rel="stylesheet" href="css/services-sec.css" />
-  <link rel="stylesheet" href="css/today-special-sec.css" />
-  <link rel="stylesheet" href="css/foodmenu-sec.css" />
-  <link rel="stylesheet" href="css/profile-pop-sec.css" />
-  <link rel="stylesheet" href="css/blog-sec.css" />
-  <link rel="stylesheet" href="css/testimonial-sec.css" />
-  <link rel="stylesheet" href="css/takefedback-sec.css" />
-  <link rel="stylesheet" href="css/team-sec.css" />
-  <link rel="stylesheet" href="css/footer-sec.css" />
-  <link rel="stylesheet" href="css/gallery-sec.css" />
+    <!-- Fonts & Icons -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
 
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
-  <!-- Add this inside <head> -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- Swiper & Scroll Reveal -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-    body {
-      font-family: "Poppins", sans-serif;
-      background: #f9f9f9;
-      color: #333;
-    }
+      body {
+        font-family: "Poppins", sans-serif;
+        background: #f9f9f9;
+        color: #333;
+        line-height: 1.6;
+        transition: background 0.3s ease, color 0.3s ease;
+      }
 
-    html {
-      scroll-behavior: smooth;
-    }
+      html {
+        scroll-behavior: smooth;
+      }
 
-    :root {
-      --bg: #fffaf5;
-      --accent: #ffb24d;
-      /* button accent */
-      --text: #111;
-      --muted: #8a8a8a;
-      --card: #ffffff;
-      --gap: 24px;
-      --max-width: 1200px;
-    }
-  </style>
-</head>
+      :root {
+        --bg: #fff8e1;
+        /* light creamy yellow background */
+        --accent: #ffb703;
+        /* mustard yellow accent */
+        --text: #2b2b2b;
+        /* dark text for readability */
+        --muted: #7a7a7a;
+        /* muted gray for secondary text */
+        --card: #ffffff;
+        /* clean white cards */
+        --gap: 24px;
+        --max-width: 1200px;
+      }
 
-<body>
-  <header class="header">
-    <nav class="navbar">
-      <div class="navbar__left">
-        <button class="menu-btn" aria-label="Toggle Menu">
-          <i class="fa-solid fa-bars"></i>
+      /* Smooth hover effect globally */
+      a,
+      button {
+        transition: all 0.3s ease-in-out;
+        cursor: pointer;
+      }
+
+      img:hover {
+        transform: scale(1.05);
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="header">
+      <nav class="navbar">
+        <div class="navbar__left">
+          <button class="menu-btn" aria-label="Toggle Menu">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <div class="navbar__logo">
+            <h1 class="logo__text">Foody</h1>
+          </div>
+        </div>
+
+        <!-- Nav Links -->
+        <ul class="navbar__links">
+          <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
+          <li class="nav-item">
+            <a href="#about" class="nav-link">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a href="#contact" class="nav-link">Contact Us</a>
+          </li>
+          <li class="nav-item">
+            <a href="#menu" class="nav-link">Our Menu</a>
+          </li>
+          <li class="nav-item">
+            <a href="#blog" class="nav-link">Our Blog</a>
+          </li>
+          <li class="nav-item">
+            <a href="#services" class="nav-link">Our Services</a>
+          </li>
+        </ul>
+
+        <!-- Right Side Buttons -->
+        <div class="navbar__actions">
+          <!-- Profile Button -->
+          <button class="btn-profile" id="profileBtn">
+            <i class="fa-solid fa-user"></i> Profile
+          </button>
+        </div>
+      </nav>
+    </header>
+    
+    <!-- Profile Sidebar -->
+    <div class="profile-sidebar" id="profileSidebar">
+      <aside class="sidebar-content" aria-label="User Profile Navigation">
+        <!-- Close Button -->
+        <button class="close-btn" id="closeSidebar" aria-label="Close Sidebar">
+          &times;
         </button>
-        <div class="navbar__logo">
-          <h1 class="logo__text">Foody</h1>
-        </div>
-      </div>
 
-      <!-- Nav Links -->
-      <ul class="navbar__links">
-        <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
-        <li class="nav-item"><a href="#about" class="nav-link">About Us</a></li>
-        <li class="nav-item"><a href="#contact" class="nav-link">Contact Us</a></li>
-        <li class="nav-item"><a href="#menu" class="nav-link">Our Menu</a></li>
-        <li class="nav-item"><a href="#blog" class="nav-link">Our Blog</a></li>
-        <li class="nav-item">
-          <a href="#services" class="nav-link">Our Services</a>
-        </li>
-      </ul>
-
-      <!-- Right Side Buttons -->
-      <div class="navbar__actions">
-        <!-- Profile Button -->
-        <button class="btn-profile" id="profileBtn">
-          <i class="fa-solid fa-user"></i> Profile
-        </button>
-
-      </div>
-    </nav>
-  </header>
-  <!-- Profile Sidebar -->
-  <div class="profile-sidebar" id="profileSidebar">
-    <aside class="sidebar-content" aria-label="User Profile Navigation">
-      <!-- Close Button -->
-      <button class="close-btn" id="closeSidebar" aria-label="Close Sidebar">&times;</button>
-
-      <!-- Sidebar Header -->
-      <div class="sidebar-header">
-        <i class="fa-solid fa-user-circle"></i>
-        <h3>👤 Welcome</h3>
-      </div>
-
-      <!-- Sidebar Menu -->
-      <ul class="sidebar-menu">
-        <li><i class="fa-solid fa-right-to-bracket"></i> Login</li>
-        <li><i class="fa-solid fa-user-plus"></i> Sign Up</li>
-        <li><i class="fa-solid fa-gear"></i> Settings</li>
-        <li><i class="fa-solid fa-box"></i> My Orders</li>
-        <li><i class="fa-solid fa-right-from-bracket"></i> Logout</li>
-      </ul>
-    </aside>
-  </div>
-  <main>
-    <section class="hero">
-      <!-- Left Content -->
-      <div class="hero__left">
-        <span class="hero__tagline">🍴 100% Fresh & Tasty</span>
-        <h2>We Serve The Taste You Love 😍</h2>
-        <p>
-          Fresh, delicious, and healthy meals made with love. Explore our menu
-          and order your favorite dishes today.
-        </p>
-
-        <!-- Social Media -->
-        <div class="hero__socials">
-          <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-          <a href="#"><i class="fa-brands fa-instagram"></i></a>
-          <a href="#"><i class="fa-brands fa-twitter"></i></a>
-          <a href="#"><i class="fa-brands fa-youtube"></i></a>
+        <!-- Sidebar Header -->
+        <div class="sidebar-header">
+          <i class="fa-solid fa-user-circle"></i>
+          <h3>👤 Welcome</h3>
         </div>
 
-        <!-- Buttons -->
-        <div class="hero__buttons">
-          <button class="btn btn-order">Order</button>
-          <button class="btn btn-secondary">View Menu</button>
+        <!-- Sidebar Menu -->
+        <ul class="sidebar-menu">
+          <li><i class="fa-solid fa-right-to-bracket"></i> Login</li>
+          <li><i class="fa-solid fa-user-plus"></i> Sign Up</li>
+          <li><i class="fa-solid fa-gear"></i> Settings</li>
+          <li><i class="fa-solid fa-box"></i> My Orders</li>
+          <li><i class="fa-solid fa-right-from-bracket"></i> Logout</li>
+        </ul>
+      </aside>
+    </div>
+
+    <main>
+      <section class="hero">
+        <!-- Left Content -->
+        <div class="hero__left">
+          <span class="hero__tagline">🍴 100% Fresh & Tasty</span>
+          <h2>We Serve The Taste You Love 😍</h2>
+          <p>
+            Fresh, delicious, and healthy meals made with love. Explore our menu
+            and order your favorite dishes today.
+          </p>
+
+          <!-- Social Media -->
+          <div class="hero__socials">
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+
+          <!-- Buttons -->
+          <div class="hero__buttons">
+            <button class="btn btn-order">Order</button>
+            <button class="btn btn-secondary">View Menu</button>
+          </div>
         </div>
-      </div>
 
-      <!-- Right Content -->
-      <div class="hero__right">
-        <div class="hero__image-box">
-          <img src="assets/chef.webp" alt="Delicious Food" class="hero__image" />
-        </div>
+        <!-- Right Content -->
+        <div class="hero__right">
+          <div class="hero__image-box">
+            <img
+              src="assets/chef.webp"
+              alt="Delicious Food"
+              class="hero__image"
+            />
+          </div>
 
-        <!-- List (Desktop) -->
-        <div class="hero__list-box">
-          <ul class="hero__list">
-            <li>🍽️ Dishes</li>
-            <li>🍩 Dessert</li>
-            <li>🥤 Drinks</li>
-            <li>🍱 Platter</li>
-            <li>🍪 Snacks</li>
-          </ul>
+          <!-- List (Desktop) -->
+          <div class="hero__list-box">
+            <ul class="hero__list">
+              <li>🍽️ Dishes</li>
+              <li>🍩 Dessert</li>
+              <li>🥤 Drinks</li>
+              <li>🍱 Platter</li>
+              <li>🍪 Snacks</li>
+            </ul>
 
-          <!-- Swiper Slider (Mobile) -->
-          <div class="swiper heroSwiper">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">🍽️ Dishes</div>
-              <div class="swiper-slide">🍩 Dessert</div>
-              <div class="swiper-slide">🥤 Drinks</div>
-              <div class="swiper-slide">🍱 Platter</div>
-              <div class="swiper-slide">🍪 Snacks</div>
+            <!-- Swiper Slider (Mobile) -->
+            <div class="swiper heroSwiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">🍽️ Dishes</div>
+                <div class="swiper-slide">🍩 Dessert</div>
+                <div class="swiper-slide">🥤 Drinks</div>
+                <div class="swiper-slide">🍱 Platter</div>
+                <div class="swiper-slide">🍪 Snacks</div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="popular-dishes">
-      <div class="container">
-        <!-- Section Header -->
-        <div class="info-container center">
-          <div class="info-sec">
-            <h2 class="section-title">🍴 Popular Dishes</h2>
+      <section class="popular-dishes">
+        <div class="container">
+          <!-- Section Header -->
+          <div class="info-container center">
+            <div class="info-sec">
+              <h2 class="section-title">🍴 Popular Dishes</h2>
+            </div>
+
+            <!-- Swiper Buttons -->
+            <div class="swip-btn">
+              <button class="dish-prev">
+                <i class="fa-solid fa-chevron-left"></i>
+              </button>
+              <button class="dish-next">
+                <i class="fa-solid fa-chevron-right"></i>
+              </button>
+            </div>
           </div>
 
-          <!-- Swiper Buttons -->
-          <div class="swip-btn">
-            <button class="dish-prev">
-              <i class="fa-solid fa-chevron-left"></i>
-            </button>
-            <button class="dish-next">
-              <i class="fa-solid fa-chevron-right"></i>
-            </button>
+          <!-- Scrollable Wrapper -->
+          <div class="dishes-scroll">
+            <!-- Dish Card -->
+            <div class="dish-card">
+              <img src="assets/pizza.jpeg" alt="Spicy Pizza" class="dish-img" />
+              <h3 class="dish-name">Spicy Pizza</h3>
+              <p class="dish-desc">Cheesy, spicy and loaded with toppings.</p>
+              <div class="dish-rating">⭐⭐⭐⭐☆</div>
+              <div class="dish-footer">
+                <span class="dish-price">$12</span>
+                <button class="btn-cart">
+                  <i class="fa-solid fa-cart-shopping"></i> Add
+                </button>
+              </div>
+            </div>
+
+            <div class="dish-card">
+              <img
+                src="assets/burger2.jpeg"
+                alt="Fresh Salad"
+                class="dish-img"
+              />
+              <h3 class="dish-name">Fresh Salad</h3>
+              <p class="dish-desc">Green, healthy and refreshing.</p>
+              <div class="dish-rating">⭐⭐⭐⭐☆</div>
+              <div class="dish-footer">
+                <span class="dish-price">$8</span>
+                <button class="btn-cart">
+                  <i class="fa-solid fa-cart-shopping"></i> Add
+                </button>
+              </div>
+            </div>
+
+            <div class="dish-card">
+              <img
+                src="assets/burger.jpeg"
+                alt="Juicy Burger"
+                class="dish-img"
+              />
+              <h3 class="dish-name">Juicy Burger</h3>
+              <p class="dish-desc">Double patty, cheese & fries combo.</p>
+              <div class="dish-rating">⭐⭐⭐⭐⭐</div>
+              <div class="dish-footer">
+                <span class="dish-price">$10</span>
+                <button class="btn-cart">
+                  <i class="fa-solid fa-cart-shopping"></i> Add
+                </button>
+              </div>
+            </div>
+
+            <div class="dish-card">
+              <img
+                src="assets/patato.jpeg"
+                alt="Pasta Alfredo"
+                class="dish-img"
+              />
+              <h3 class="dish-name">Pasta Alfredo</h3>
+              <p class="dish-desc">Creamy & rich Italian pasta.</p>
+              <div class="dish-rating">⭐⭐⭐⭐⭐</div>
+              <div class="dish-footer">
+                <span class="dish-price">$15</span>
+                <button class="btn-cart">
+                  <i class="fa-solid fa-cart-shopping"></i> Add
+                </button>
+              </div>
+            </div>
+
+            <div class="dish-card">
+              <img
+                src="assets/sandwhich.jpeg"
+                alt="Grilled Sandwich"
+                class="dish-img"
+              />
+              <h3 class="dish-name">Grilled Sandwich</h3>
+              <p class="dish-desc">
+                Toasted bread stuffed with cheese & veggies.
+              </p>
+              <div class="dish-rating">⭐⭐⭐⭐☆</div>
+              <div class="dish-footer">
+                <span class="dish-price">$7</span>
+                <button class="btn-cart">
+                  <i class="fa-solid fa-cart-shopping"></i> Add
+                </button>
+              </div>
+            </div>
+
+            <div class="dish-card">
+              <img
+                src="assets/chiken.jpeg"
+                alt="Chicken Wings"
+                class="dish-img"
+              />
+              <h3 class="dish-name">Chicken Wings</h3>
+              <p class="dish-desc">Crispy, spicy wings with special sauce.</p>
+              <div class="dish-rating">⭐⭐⭐⭐⭐</div>
+              <div class="dish-footer">
+                <span class="dish-price">$11</span>
+                <button class="btn-cart">
+                  <i class="fa-solid fa-cart-shopping"></i> Add
+                </button>
+              </div>
+            </div>
+
+            <div class="dish-card">
+              <img src="assets/dish7.jpg" alt="Tacos" class="dish-img" />
+              <h3 class="dish-name">Mexican Tacos</h3>
+              <p class="dish-desc">Soft tortillas with spicy fillings.</p>
+              <div class="dish-rating">⭐⭐⭐⭐☆</div>
+              <div class="dish-footer">
+                <span class="dish-price">$9</span>
+                <button class="btn-cart">
+                  <i class="fa-solid fa-cart-shopping"></i> Add
+                </button>
+              </div>
+            </div>
+
+            <div class="dish-card">
+              <img
+                src="assets/dish8.jpg"
+                alt="Sushi Platter"
+                class="dish-img"
+              />
+              <h3 class="dish-name">Sushi Platter</h3>
+              <p class="dish-desc">
+                Fresh rolls served with wasabi & soy sauce.
+              </p>
+              <div class="dish-rating">⭐⭐⭐⭐⭐</div>
+              <div class="dish-footer">
+                <span class="dish-price">$18</span>
+                <button class="btn-cart">
+                  <i class="fa-solid fa-cart-shopping"></i> Add
+                </button>
+              </div>
+            </div>
+
+            <div class="dish-card">
+              <img
+                src="assets/dish9.jpg"
+                alt="Chocolate Cake"
+                class="dish-img"
+              />
+              <h3 class="dish-name">Chocolate Cake</h3>
+              <p class="dish-desc">Moist, rich & topped with choco cream.</p>
+              <div class="dish-rating">⭐⭐⭐⭐⭐</div>
+              <div class="dish-footer">
+                <span class="dish-price">$6</span>
+                <button class="btn-cart">
+                  <i class="fa-solid fa-cart-shopping"></i> Add
+                </button>
+              </div>
+            </div>
+
+            <div class="dish-card">
+              <img
+                src="assets/dish10.jpg"
+                alt="Ice Cream Sundae"
+                class="dish-img"
+              />
+              <h3 class="dish-name">Ice Cream Sundae</h3>
+              <p class="dish-desc">Vanilla, chocolate & nuts topping.</p>
+              <div class="dish-rating">⭐⭐⭐⭐☆</div>
+              <div class="dish-footer">
+                <span class="dish-price">$5</span>
+                <button class="btn-cart">
+                  <i class="fa-solid fa-cart-shopping"></i> Add
+                </button>
+              </div>
+            </div>
           </div>
         </div>
+      </section>
 
-        <!-- Scrollable Wrapper -->
-        <div class="dishes-scroll">
-          <!-- 1 -->
-          <div class="dish-card">
-            <img src="assets/pizza.jpeg" alt="Spicy Pizza" class="dish-img" />
-            <h3 class="dish-name">Spicy Pizza</h3>
-            <p class="dish-desc">Cheesy, spicy and loaded with toppings.</p>
-            <span class="dish-price">$12</span>
-          </div>
-
-          <!-- 2 -->
-          <div class="dish-card">
-            <img src="assets/WhatsApp Image 2025-09-25 at 8.04.43 PM.jpeg" alt="Fresh Salad" class="dish-img" />
-            <h3 class="dish-name">Fresh Salad</h3>
-            <p class="dish-desc">Green, healthy and refreshing.</p>
-            <span class="dish-price">$8</span>
-          </div>
-
-          <!-- 3 -->
-          <div class="dish-card">
-            <img src="assets/burger.jpeg" alt="Juicy Burger" class="dish-img" />
-            <h3 class="dish-name">Juicy Burger</h3>
-            <p class="dish-desc">Double patty, cheese & fries combo.</p>
-            <span class="dish-price">$10</span>
-          </div>
-
-          <!-- 4 -->
-          <div class="dish-card">
-            <img src="assets/patato.jpeg" alt="Pasta Alfredo" class="dish-img" />
-            <h3 class="dish-name">Pasta Alfredo</h3>
-            <p class="dish-desc">Creamy & rich Italian pasta.</p>
-            <span class="dish-price">$15</span>
-          </div>
-
-          <!-- 5 -->
-          <div class="dish-card">
-            <img src="assets/sandwhich.jpeg" alt="Grilled Sandwich" class="dish-img" />
-            <h3 class="dish-name">Grilled Sandwich</h3>
-            <p class="dish-desc">
-              Toasted bread stuffed with cheese & veggies.
+      <section class="deals" id="deals">
+        <div class="container">
+          <!-- Section Header -->
+          <div class="deals-header">
+            <h2 class="deals-title">🔥 Special Offers</h2>
+            <p class="deals-subtitle">
+              Don’t miss out on our best deals today!
             </p>
-            <span class="dish-price">$7</span>
           </div>
 
-          <!-- 6 -->
-          <div class="dish-card">
-            <img src="assets/chiken.jpeg" alt="Chicken Wings" class="dish-img" />
-            <h3 class="dish-name">Chicken Wings</h3>
-            <p class="dish-desc">Crispy, spicy wings with special sauce.</p>
-            <span class="dish-price">$11</span>
-          </div>
+          <!-- Deals Grid -->
+          <div class="deals-grid">
+            <!-- Deal Card -->
+            <div class="deal-card">
+              <img src="assets/deal1.jpg" alt="Pizza Offer" class="deal-img" />
+              <div class="deal-info">
+                <h3 class="deal-name">Buy 1 Get 1 Free 🍕</h3>
+                <p class="deal-desc">
+                  On all medium pizzas, valid till tonight.
+                </p>
+                <span class="deal-price">$12 <del>$24</del></span>
 
-          <!-- 7 -->
-          <div class="dish-card">
-            <img src="assets/dish7.jpg" alt="Tacos" class="dish-img" />
-            <h3 class="dish-name">Mexican Tacos</h3>
-            <p class="dish-desc">Soft tortillas with spicy fillings.</p>
-            <span class="dish-price">$9</span>
-          </div>
+                <!-- Order Button -->
+                <button class="btn-deal">Order Now</button>
 
-          <!-- 8 -->
-          <div class="dish-card">
-            <img src="assets/dish8.jpg" alt="Sushi Platter" class="dish-img" />
-            <h3 class="dish-name">Sushi Platter</h3>
-            <p class="dish-desc">
-              Fresh rolls served with wasabi & soy sauce.
-            </p>
-            <span class="dish-price">$18</span>
-          </div>
-
-          <!-- 9 -->
-          <div class="dish-card">
-            <img src="assets/dish9.jpg" alt="Chocolate Cake" class="dish-img" />
-            <h3 class="dish-name">Chocolate Cake</h3>
-            <p class="dish-desc">Moist, rich & topped with choco cream.</p>
-            <span class="dish-price">$6</span>
-          </div>
-
-          <!-- 10 -->
-          <div class="dish-card">
-            <img src="assets/dish10.jpg" alt="Ice Cream Sundae" class="dish-img" />
-            <h3 class="dish-name">Ice Cream Sundae</h3>
-            <p class="dish-desc">Vanilla, chocolate & nuts topping.</p>
-            <span class="dish-price">$5</span>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="deals" id="deals">
-      <div class="container">
-        <!-- Section Header -->
-        <div class="deals-header">
-          <h2 class="deals-title">🔥 Special Offers</h2>
-          <p class="deals-subtitle">Don’t miss out on our best deals today!</p>
-        </div>
-
-        <!-- Deals Grid -->
-        <div class="deals-grid">
-          <!-- Deal Card -->
-          <div class="deal-card">
-            <img src="assets/deal1.jpg" alt="Pizza Offer" class="deal-img" />
-            <div class="deal-info">
-              <h3 class="deal-name">Buy 1 Get 1 Free 🍕</h3>
-              <p class="deal-desc">On all medium pizzas, valid till tonight.</p>
-              <span class="deal-price">$12 <del>$24</del></span>
-              <button class="btn-deal">Order Now</button>
+                <!-- Hidden Quantity Box -->
+                <div class="quantity-box hidden">
+                  <button class="qty-btn minus">-</button>
+                  <input type="text" value="0" readonly />
+                  <button class="qty-btn plus">+</button>
+                </div>
+              </div>
             </div>
-          </div>
 
-          <!-- Deal Card -->
-          <div class="deal-card">
-            <img src="assets/deal2.jpg" alt="Burger Combo" class="deal-img" />
-            <div class="deal-info">
-              <h3 class="deal-name">Burger + Fries Combo 🍔🍟</h3>
-              <p class="deal-desc">Perfect snack meal at the best price.</p>
-              <span class="deal-price">$8 <del>$14</del></span>
-              <button class="btn-deal">Order Now</button>
+            <!-- Deal Card -->
+            <div class="deal-card">
+              <img src="assets/deal2.jpg" alt="Burger Combo" class="deal-img" />
+              <div class="deal-info">
+                <h3 class="deal-name">Burger + Fries Combo 🍔🍟</h3>
+                <p class="deal-desc">Perfect snack meal at the best price.</p>
+                <span class="deal-price">$8 <del>$14</del></span>
+
+                <button class="btn-deal">Order Now</button>
+                <div class="quantity-box hidden">
+                  <button class="qty-btn minus">-</button>
+                  <input type="text" value="0" readonly />
+                  <button class="qty-btn plus">+</button>
+                </div>
+              </div>
             </div>
-          </div>
 
-          <!-- Deal Card -->
-          <div class="deal-card">
-            <img src="assets/deal3.jpg" alt="Family Meal" class="deal-img" />
-            <div class="deal-info">
-              <h3 class="deal-name">Family Meal Deal 🍗</h3>
-              <p class="deal-desc">Big bucket with drinks for 4 people.</p>
-              <span class="deal-price">$25 <del>$40</del></span>
-              <button class="btn-deal">Order Now</button>
+            <!-- Deal Card -->
+            <div class="deal-card">
+              <img src="assets/deal3.jpg" alt="Family Meal" class="deal-img" />
+              <div class="deal-info">
+                <h3 class="deal-name">Family Meal Deal 🍗</h3>
+                <p class="deal-desc">Big bucket with drinks for 4 people.</p>
+                <span class="deal-price">$25 <del>$40</del></span>
+
+                <button class="btn-deal">Order Now</button>
+                <div class="quantity-box hidden">
+                  <button class="qty-btn minus">-</button>
+                  <input type="text" value="0" readonly />
+                  <button class="qty-btn plus">+</button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="section-wrap" aria-label="Restaurant services section" id="services">
+      <section
+        class="section-wrap"
+        aria-label="Restaurant services section"
+        id="services"
+      >
+        <!-- Visual / Left -->
+        <div class="visual" aria-hidden="false">
+          <div
+            class="circle-bg"
+            role="img"
+            aria-label="food collage background"
+          ></div>
 
-      <!-- Visual / Left -->
-      <div class="visual" aria-hidden="false">
-        <div class="circle-bg" role="img" aria-label="food collage background"></div>
+          <!-- chef image: replace src with your chef image -->
+          <img class="chef" src="assets/services.png" alt="Chef" />
 
-        <!-- chef image: replace src with your chef image -->
-        <img class="chef" src="assets/services.png" alt="Chef" />
-
-        <div class="food-cube" aria-hidden="true">Tofu</div>
-      </div>
-
-      <!-- Content / Right -->
-      <div class="content">
-        <div class="eyebrow">We Are More Than</div>
-        <h1>Multiple Survice</h1>
-        <p class="lead">
-          This is a type of restaurant which typically serves food and drinks, in addition to light refreshments such as
-          baked goods or snacks. The term comes from the French word meaning food.
-        </p>
-
-        <div class="services">
-          <div class="service-item">
-            <div class="icon" aria-hidden="true">
-              <!-- simple SVG icon -->
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg">
-                <path d="M3 7h18M6 7v10a3 3 0 0 0 3 3h6a3 3 0 0 0 3-3V7" stroke="#ff7a1a" stroke-width="1.6"
-                  stroke-linecap="round" stroke-linejoin="round" />
-                <path d="M9 3v4M15 3v4" stroke="#ff7a1a" stroke-width="1.6" stroke-linecap="round"
-                  stroke-linejoin="round" />
-              </svg>
-            </div>
-            <div>
-              <span class="text">Online Order</span>
-            </div>
-          </div>
-
-          <div class="service-item">
-            <div class="icon" aria-hidden="true">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                <path d="M3 8h18M7 8v9a3 3 0 0 0 3 3h4a3 3 0 0 0 3-3V8" stroke="#4b9cff" stroke-width="1.6"
-                  stroke-linecap="round" stroke-linejoin="round" />
-              </svg>
-            </div>
-            <div><span class="text">Pre-Reservation</span></div>
-          </div>
-
-          <div class="service-item">
-            <div class="icon" aria-hidden="true">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                <path d="M12 3v18" stroke="#7cd67c" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
-                <path d="M3 12h18" stroke="#7cd67c" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
-              </svg>
-            </div>
-            <div>
-              <span class="text">24/7 Service</span>
-              <span class="service-sub">Always available</span>
-            </div>
-          </div>
-
-          <div class="service-item">
-            <div class="icon" aria-hidden="true">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                <path d="M3 7h18M6 7v10a3 3 0 0 0 3 3h6a3 3 0 0 0 3-3V7" stroke="#f06ea6" stroke-width="1.6"
-                  stroke-linecap="round" stroke-linejoin="round" />
-              </svg>
-            </div>
-            <div><span class="text">Organized Foodie Place</span></div>
-          </div>
-
-          <div class="service-item">
-            <div class="icon" aria-hidden="true">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                <path d="M6 3h12l-1 14a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2L6 3z" stroke="#ffd36b" stroke-width="1.6"
-                  stroke-linecap="round" stroke-linejoin="round" />
-              </svg>
-            </div>
-            <div><span class="text">Clean Kitchen</span></div>
-          </div>
-
-          <div class="service-item">
-            <div class="icon" aria-hidden="true">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                <path d="M12 3c2.2 0 4 1 4 3 0 3-4 5-4 5s-4-2-4-5c0-2 1.8-3 4-3z" stroke="#c86cff" stroke-width="1.5"
-                  stroke-linecap="round" stroke-linejoin="round" />
-              </svg>
-            </div>
-            <div><span class="text">Super Chefs</span></div>
-          </div>
+          <div class="food-cube" aria-hidden="true">Tofu</div>
         </div>
 
-        <a class="btn" href="#about">About Us</a>
-      </div>
+        <!-- Content / Right -->
+        <div class="content">
+          <div class="eyebrow">We Are More Than</div>
+          <h1>Multiple Survice</h1>
+          <p class="lead">
+            This is a type of restaurant which typically serves food and drinks,
+            in addition to light refreshments such as baked goods or snacks. The
+            term comes from the French word meaning food.
+          </p>
 
-    </section>
+          <div class="services">
+            <div class="service-item">
+              <div class="icon" aria-hidden="true">
+                <!-- simple SVG icon -->
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M3 7h18M6 7v10a3 3 0 0 0 3 3h6a3 3 0 0 0 3-3V7"
+                    stroke="#ff7a1a"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M9 3v4M15 3v4"
+                    stroke="#ff7a1a"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              <div>
+                <span class="text">Online Order</span>
+              </div>
+            </div>
 
-    <section class="menu" id="menu">
-      <div class="container">
-        <!-- Section Header -->
-        <div class="menu-header">
-          <h2 class="menu-title">📖 Our Menu</h2>
-          <p class="menu-subtitle">Discover our delicious food categories</p>
+            <div class="service-item">
+              <div class="icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M3 8h18M7 8v9a3 3 0 0 0 3 3h4a3 3 0 0 0 3-3V8"
+                    stroke="#4b9cff"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              <div><span class="text">Pre-Reservation</span></div>
+            </div>
+
+            <div class="service-item">
+              <div class="icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M12 3v18"
+                    stroke="#7cd67c"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M3 12h18"
+                    stroke="#7cd67c"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              <div>
+                <span class="text">24/7 Service</span>
+                <span class="service-sub">Always available</span>
+              </div>
+            </div>
+
+            <div class="service-item">
+              <div class="icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M3 7h18M6 7v10a3 3 0 0 0 3 3h6a3 3 0 0 0 3-3V7"
+                    stroke="#f06ea6"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              <div><span class="text">Organized Foodie Place</span></div>
+            </div>
+
+            <div class="service-item">
+              <div class="icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M6 3h12l-1 14a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2L6 3z"
+                    stroke="#ffd36b"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              <div><span class="text">Clean Kitchen</span></div>
+            </div>
+
+            <div class="service-item">
+              <div class="icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M12 3c2.2 0 4 1 4 3 0 3-4 5-4 5s-4-2-4-5c0-2 1.8-3 4-3z"
+                    stroke="#c86cff"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              <div><span class="text">Super Chefs</span></div>
+            </div>
+          </div>
+
+          <a class="btn" href="#about">About Us</a>
         </div>
+      </section>
 
-        <!-- Menu Categories -->
-        <div class="menu-categories">
-          <button class="menu-btn active">
-            <i class="fa-solid fa-layer-group"></i>
-            <span>Categories</span>
+      <section class="menu" id="menu">
+        <div class="container">
+          <!-- Section Header -->
+          <div class="menu-header">
+            <h2 class="menu-title">📖 Our Menu</h2>
+            <p class="menu-subtitle">Discover our delicious food categories</p>
+          </div>
+
+          <!-- Menu Categories -->
+          <div class="menu-categories">
+            <button class="menu-btn active">
+              <i class="fa-solid fa-layer-group"></i>
+              <span>Categories</span>
+            </button>
             <button class="menu-btn">
               <i class="fa-solid fa-bread-slice"></i>
               <span>Bread</span>
@@ -461,509 +670,519 @@
               <i class="fa-solid fa-mug-hot"></i>
               <span>Drinks</span>
             </button>
-        </div>
+          </div>
 
-        <!-- Menu Grid -->
-        <div class="menu-grid">
-          <!-- Item -->
-          <div class="menu-card">
-            <img src="assets/burger.jpeg" alt="Dish" class="menu-img" />
-            <div class="menu-info">
-              <h3 class="menu-name">Bruschetta</h3>
-              <p class="menu-desc">Grilled bread with tomato & basil</p>
-              <span class="menu-price">$6</span>
-
-              <!-- Add to Cart -->
-              <div class="menu-actions">
-                <button class="add-btn"><i class="fa-solid fa-plus"></i></button>
-                <div class="counter hidden">
-                  <button class="decrease">-</button>
-                  <span class="count">1</span>
-                  <button class="increase">+</button>
+          <!-- Menu Grid -->
+          <div class="menu-grid">
+            <!-- Item -->
+            <div class="menu-card">
+              <img src="assets/burger.jpeg" alt="Dish" class="menu-img" />
+              <div class="menu-info">
+                <h3 class="menu-name">Bruschetta</h3>
+                <p class="menu-desc">Grilled bread with tomato & basil</p>
+                <span class="menu-price">$6</span>
+                <div class="menu-actions">
+                  <button class="add-btn">
+                    <i class="fa-solid fa-plus"></i>
+                  </button>
+                  <div class="counter hidden">
+                    <button class="decrease">-</button>
+                    <span class="count">1</span>
+                    <button class="increase">+</button>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          <div class="menu-card">
-            <img src="assets/sandwhich.jpeg" alt="Dish" class="menu-img" />
-            <div class="menu-info">
-              <h3 class="menu-name">Garlic Bread</h3>
-              <p class="menu-desc">Crispy bread with garlic butter</p>
-              <span class="menu-price">$5</span>
-              <div class="menu-actions">
-                <button class="add-btn"><i class="fa-solid fa-plus"></i></button>
-                <div class="counter hidden">
-                  <button class="decrease">-</button>
-                  <span class="count">1</span>
-                  <button class="increase">+</button>
+            <div class="menu-card">
+              <img src="assets/sandwhich.jpeg" alt="Dish" class="menu-img" />
+              <div class="menu-info">
+                <h3 class="menu-name">Garlic Bread</h3>
+                <p class="menu-desc">Crispy bread with garlic butter</p>
+                <span class="menu-price">$5</span>
+                <div class="menu-actions">
+                  <button class="add-btn">
+                    <i class="fa-solid fa-plus"></i>
+                  </button>
+                  <div class="counter hidden">
+                    <button class="decrease">-</button>
+                    <span class="count">1</span>
+                    <button class="increase">+</button>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          <div class="menu-card">
-            <img src="assets/WhatsApp Image 2025-09-25 at 8.04.47 PM.jpeg" alt="Dish" class="menu-img" />
-            <div class="menu-info">
-              <h3 class="menu-name">Caesar Salad</h3>
-              <p class="menu-desc">Fresh lettuce, croutons & parmesan</p>
-              <span class="menu-price">$8</span>
-              <div class="menu-actions">
-                <button class="add-btn"><i class="fa-solid fa-plus"></i></button>
-                <div class="counter hidden">
-                  <button class="decrease">-</button>
-                  <span class="count">1</span>
-                  <button class="increase">+</button>
+            <div class="menu-card">
+              <img
+                src="assets/WhatsApp Image 2025-09-25 at 8.04.47 PM.jpeg"
+                alt="Dish"
+                class="menu-img"
+              />
+              <div class="menu-info">
+                <h3 class="menu-name">Caesar Salad</h3>
+                <p class="menu-desc">Fresh lettuce, croutons & parmesan</p>
+                <span class="menu-price">$8</span>
+                <div class="menu-actions">
+                  <button class="add-btn">
+                    <i class="fa-solid fa-plus"></i>
+                  </button>
+                  <div class="counter hidden">
+                    <button class="decrease">-</button>
+                    <span class="count">1</span>
+                    <button class="increase">+</button>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          <div class="menu-card">
-            <img src="assets/WhatsApp Image 2025-09-25 at 8.04.56 PM.jpeg" alt="Dish" class="menu-img" />
-            <div class="menu-info">
-              <h3 class="menu-name">Soup of the Day</h3>
-              <p class="menu-desc">Served hot and fresh</p>
-              <span class="menu-price">$7</span>
-              <div class="menu-actions">
-                <button class="add-btn"><i class="fa-solid fa-plus"></i></button>
-                <div class="counter hidden">
-                  <button class="decrease">-</button>
-                  <span class="count">1</span>
-                  <button class="increase">+</button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- Item -->
-          <div class="menu-card">
-            <img src="assets/burger.jpeg" alt="Dish" class="menu-img" />
-            <div class="menu-info">
-              <h3 class="menu-name">Bruschetta</h3>
-              <p class="menu-desc">Grilled bread with tomato & basil</p>
-              <span class="menu-price">$6</span>
-
-              <!-- Add to Cart -->
-              <div class="menu-actions">
-                <button class="add-btn"><i class="fa-solid fa-plus"></i></button>
-                <div class="counter hidden">
-                  <button class="decrease">-</button>
-                  <span class="count">1</span>
-                  <button class="increase">+</button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="menu-card">
-            <img src="assets/sandwhich.jpeg" alt="Dish" class="menu-img" />
-            <div class="menu-info">
-              <h3 class="menu-name">Garlic Bread</h3>
-              <p class="menu-desc">Crispy bread with garlic butter</p>
-              <span class="menu-price">$5</span>
-              <div class="menu-actions">
-                <button class="add-btn"><i class="fa-solid fa-plus"></i></button>
-                <div class="counter hidden">
-                  <button class="decrease">-</button>
-                  <span class="count">1</span>
-                  <button class="increase">+</button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="menu-card">
-            <img src="assets/WhatsApp Image 2025-09-25 at 8.04.47 PM.jpeg" alt="Dish" class="menu-img" />
-            <div class="menu-info">
-              <h3 class="menu-name">Caesar Salad</h3>
-              <p class="menu-desc">Fresh lettuce, croutons & parmesan</p>
-              <span class="menu-price">$8</span>
-              <div class="menu-actions">
-                <button class="add-btn"><i class="fa-solid fa-plus"></i></button>
-                <div class="counter hidden">
-                  <button class="decrease">-</button>
-                  <span class="count">1</span>
-                  <button class="increase">+</button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="menu-card">
-            <img src="assets/WhatsApp Image 2025-09-25 at 8.04.56 PM.jpeg" alt="Dish" class="menu-img" />
-            <div class="menu-info">
-              <h3 class="menu-name">Soup of the Day</h3>
-              <p class="menu-desc">Served hot and fresh</p>
-              <span class="menu-price">$7</span>
-              <div class="menu-actions">
-                <button class="add-btn"><i class="fa-solid fa-plus"></i></button>
-                <div class="counter hidden">
-                  <button class="decrease">-</button>
-                  <span class="count">1</span>
-                  <button class="increase">+</button>
+            <div class="menu-card">
+              <img
+                src="assets/WhatsApp Image 2025-09-25 at 8.04.56 PM.jpeg"
+                alt="Dish"
+                class="menu-img"
+              />
+              <div class="menu-info">
+                <h3 class="menu-name">Soup of the Day</h3>
+                <p class="menu-desc">Served hot and fresh</p>
+                <span class="menu-price">$7</span>
+                <div class="menu-actions">
+                  <button class="add-btn">
+                    <i class="fa-solid fa-plus"></i>
+                  </button>
+                  <div class="counter hidden">
+                    <button class="decrease">-</button>
+                    <span class="count">1</span>
+                    <button class="increase">+</button>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="blog-section" id="blog">
-      <div class="container">
-        <h2 class="section-title">🍔 Our Latest Blogs</h2>
-        <p class="section-subtitle">
-          Explore tips, recipes, and news from the world of fast food!
-        </p>
+      <section class="blog-section" id="blog">
+        <div class="container">
+          <h2 class="section-title">🍔 Our Latest Blogs</h2>
+          <p class="section-subtitle">
+            Explore tips, recipes, and news from the world of fast food!
+          </p>
 
-        <div class="blog-grid">
-          <!-- Blog Card 1 -->
-          <article class="blog-card">
-            <img src="assets/WhatsApp Image 2025-09-25 at 8.04.57 PM.jpeg" alt="Best Burgers in Town"
-              class="blog-img" />
-            <div class="blog-content">
-              <h3 class="blog-title">Best Burgers in Town</h3>
-              <p class="blog-desc">
-                Discover how we make the juiciest and most delicious burgers with
-                fresh ingredients and secret sauces.
+          <div class="blog-grid">
+            <!-- Blog Card 1 -->
+            <article class="blog-card">
+              <img
+                src="assets/WhatsApp Image 2025-09-25 at 8.04.57 PM.jpeg"
+                alt="Best Burgers in Town"
+                class="blog-img"
+              />
+              <div class="blog-content">
+                <h3 class="blog-title">Best Burgers in Town</h3>
+                <p class="blog-desc">
+                  Discover how we make the juiciest and most delicious burgers
+                  with fresh ingredients and secret sauces.
+                </p>
+                <a href="#" class="blog-btn">Read More</a>
+              </div>
+            </article>
+
+            <!-- Blog Card 2 -->
+            <article class="blog-card">
+              <img
+                src="assets/chiken.jpeg"
+                alt="Healthy Fast Food Choices"
+                class="blog-img"
+              />
+              <div class="blog-content">
+                <h3 class="blog-title">Healthy Fast Food Choices</h3>
+                <p class="blog-desc">
+                  Yes, fast food can be healthy too! Learn about our salads,
+                  wraps, and low-calorie menu items.
+                </p>
+                <a href="#" class="blog-btn">Read More</a>
+              </div>
+            </article>
+
+            <!-- Blog Card 3 -->
+            <article class="blog-card">
+              <img
+                src="assets/group-fastfood.jpeg"
+                alt="Behind the Kitchen"
+                class="blog-img"
+              />
+              <div class="blog-content">
+                <h3 class="blog-title">Behind the Kitchen</h3>
+                <p class="blog-desc">
+                  Step into our kitchen and meet the chefs who make your
+                  favorite meals with passion and love.
+                </p>
+                <a href="#" class="blog-btn">Read More</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="testimonial-section" id="testimonials">
+        <div class="container">
+          <h2 class="section-title">⭐ What Our Customers Say</h2>
+          <p class="section-subtitle">Real reviews from our happy foodies!</p>
+
+          <div class="testimonial-grid">
+            <!-- Testimonial 1 -->
+            <div class="testimonial-card">
+              <i class="fa-solid fa-quote-left quote-icon"></i>
+              <p class="testimonial-text">
+                “The burgers here are absolutely amazing! Juicy, cheesy and
+                perfectly grilled. Highly recommended for all burger lovers.”
               </p>
-              <a href="#" class="blog-btn">Read More</a>
+              <div class="testimonial-user">
+                <img src="assets/user1.jpg" alt="Customer 1" />
+                <div>
+                  <h3>Rahul Sharma</h3>
+                  <span>Food Blogger</span>
+                </div>
+              </div>
             </div>
-          </article>
 
-          <!-- Blog Card 2 -->
-          <article class="blog-card">
-            <img src="assets/chiken.jpeg" alt="Healthy Fast Food Choices" class="blog-img" />
-            <div class="blog-content">
-              <h3 class="blog-title">Healthy Fast Food Choices</h3>
-              <p class="blog-desc">
-                Yes, fast food can be healthy too! Learn about our salads, wraps,
-                and low-calorie menu items.
+            <!-- Testimonial 2 -->
+            <div class="testimonial-card">
+              <i class="fa-solid fa-quote-left quote-icon"></i>
+              <p class="testimonial-text">
+                “I loved their fast delivery service! The fries were still hot
+                and crispy. Definitely ordering again.”
               </p>
-              <a href="#" class="blog-btn">Read More</a>
+              <div class="testimonial-user">
+                <img src="assets/user2.jpg" alt="Customer 2" />
+                <div>
+                  <h3>Sneha Verma</h3>
+                  <span>Regular Customer</span>
+                </div>
+              </div>
             </div>
-          </article>
 
-          <!-- Blog Card 3 -->
-          <article class="blog-card">
-            <img src="assets/group-fastfood.jpeg" alt="Behind the Kitchen" class="blog-img" />
-            <div class="blog-content">
-              <h3 class="blog-title">Behind the Kitchen</h3>
-              <p class="blog-desc">
-                Step into our kitchen and meet the chefs who make your favorite
-                meals with passion and love.
+            <!-- Testimonial 3 -->
+            <div class="testimonial-card">
+              <i class="fa-solid fa-quote-left quote-icon"></i>
+              <p class="testimonial-text">
+                “Best fast-food place in town. Not only tasty food but also
+                super clean kitchen and polite staff.”
               </p>
-              <a href="#" class="blog-btn">Read More</a>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="testimonial-section" id="testimonials">
-      <div class="container">
-        <h2 class="section-title">⭐ What Our Customers Say</h2>
-        <p class="section-subtitle">Real reviews from our happy foodies!</p>
-
-        <div class="testimonial-grid">
-          <!-- Testimonial 1 -->
-          <div class="testimonial-card">
-            <i class="fa-solid fa-quote-left quote-icon"></i>
-            <p class="testimonial-text">
-              “The burgers here are absolutely amazing! Juicy, cheesy and
-              perfectly grilled. Highly recommended for all burger lovers.”
-            </p>
-            <div class="testimonial-user">
-              <img src="assets/user1.jpg" alt="Customer 1" />
-              <div>
-                <h3>Rahul Sharma</h3>
-                <span>Food Blogger</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Testimonial 2 -->
-          <div class="testimonial-card">
-            <i class="fa-solid fa-quote-left quote-icon"></i>
-            <p class="testimonial-text">
-              “I loved their fast delivery service! The fries were still hot and
-              crispy. Definitely ordering again.”
-            </p>
-            <div class="testimonial-user">
-              <img src="assets/user2.jpg" alt="Customer 2" />
-              <div>
-                <h3>Sneha Verma</h3>
-                <span>Regular Customer</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Testimonial 3 -->
-          <div class="testimonial-card">
-            <i class="fa-solid fa-quote-left quote-icon"></i>
-            <p class="testimonial-text">
-              “Best fast-food place in town. Not only tasty food but also super
-              clean kitchen and polite staff.”
-            </p>
-            <div class="testimonial-user">
-              <img src="assets/user3.jpg" alt="Customer 3" />
-              <div>
-                <h3>Arjun Patel</h3>
-                <span>Entrepreneur</span>
+              <div class="testimonial-user">
+                <img src="assets/user3.jpg" alt="Customer 3" />
+                <div>
+                  <h3>Arjun Patel</h3>
+                  <span>Entrepreneur</span>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
-    <section class="gallery" id="gallery" aria-label="Food Gallery">
+      </section>
+
+      <section class="gallery" id="gallery" aria-label="Food Gallery">
+        <div class="container">
+          <h2 class="section-title">🍔 Our Food Gallery</h2>
+          <p class="section-subtitle">
+            A glimpse of our delicious fast food items
+          </p>
+
+          <div class="gallery-grid">
+            <div class="gallery-item">
+              <img
+                src="assets/WhatsApp Image 2025-09-25 at 8.04.57 PM.jpeg"
+                alt="Burger Special"
+              />
+              <div class="overlay">Burger Special</div>
+            </div>
+            <div class="gallery-item">
+              <img
+                src="assets/WhatsApp Image 2025-09-25 at 8.04.57 PM.jpeg"
+                alt="Cheesy Pizza"
+              />
+              <div class="overlay">Cheesy Pizza</div>
+            </div>
+            <div class="gallery-item">
+              <img
+                src="assets/WhatsApp Image 2025-09-25 at 8.04.58 PM.jpeg"
+                alt="Crispy Fries"
+              />
+              <div class="overlay">Crispy Fries</div>
+            </div>
+            <div class="gallery-item">
+              <img src="assets/burger.jpeg" alt="Grilled Sandwich" />
+              <div class="overlay">Grilled Sandwich</div>
+            </div>
+            <div class="gallery-item">
+              <img src="assets/burger2.jpeg" alt="Fresh Salad" />
+              <div class="overlay">Fresh Salad</div>
+            </div>
+            <div class="gallery-item">
+              <img
+                src="assets/WhatsApp Image 2025-09-25 at 8.04.57 PM.jpeg"
+                alt="Tasty Wrap"
+              />
+              <div class="overlay">Tasty Wrap</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="team" id="team">
+        <div class="container">
+          <!-- Section Header -->
+          <div class="team-header">
+            <h2 class="team-title">👨‍🍳 Meet Our Chefs</h2>
+            <p class="team-subtitle">
+              The talented people behind your favorite dishes
+            </p>
+          </div>
+
+          <!-- Team Grid -->
+          <div class="team-grid">
+            <!-- Chef Card -->
+            <div class="team-card">
+              <img src="assets/cheaf-03.jpg" alt="Chef John" class="team-img" />
+              <div class="team-info">
+                <h3 class="team-name">Chef John Doe</h3>
+                <span class="team-role">Head Chef</span>
+                <p class="team-desc">
+                  Expert in Italian cuisine with 15+ years of experience.
+                </p>
+              </div>
+            </div>
+
+            <!-- Chef Card -->
+            <div class="team-card">
+              <img
+                src="assets/cheaf-02.jpg"
+                alt="Chef Maria"
+                class="team-img"
+              />
+              <div class="team-info">
+                <h3 class="team-name">Chef Maria Lopez</h3>
+                <span class="team-role">Pastry Chef</span>
+                <p class="team-desc">
+                  Bringing sweetness to life with world-class desserts.
+                </p>
+              </div>
+            </div>
+
+            <!-- Chef Card -->
+            <div class="team-card">
+              <img src="assets/cheaf-01.jpg" alt="Chef Alex" class="team-img" />
+              <div class="team-info">
+                <h3 class="team-name">Chef Alex Kim</h3>
+                <span class="team-role">Sous Chef</span>
+                <p class="team-desc">
+                  Fusion food specialist, mixing flavors across cultures.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Feedback Section -->
+      <section class="feedback-section" id="feedback">
+        <h2>Give Your Feedback</h2>
+        <p>How was your experience with us?</p>
+
+        <div class="feedback-icons">
+          <i
+            class="fa-regular fa-face-smile rating"
+            data-value="happy"
+            title="Happy"
+          ></i>
+          <i
+            class="fa-regular fa-face-meh rating"
+            data-value="neutral"
+            title="Okay"
+          ></i>
+          <i
+            class="fa-regular fa-face-frown rating"
+            data-value="sad"
+            title="Sad"
+          ></i>
+          <i
+            class="fa-regular fa-face-angry rating"
+            data-value="angry"
+            title="Angry"
+          ></i>
+        </div>
+
+        <textarea
+          placeholder="Write your feedback..."
+          class="feedback-text"
+        ></textarea>
+        <button type="submit" class="btn-submit">Submit</button>
+      </section>
+
+    </main>
+
+    <footer class="footer">
       <div class="container">
-        <h2 class="section-title">🍔 Our Food Gallery</h2>
-        <p class="section-subtitle">A glimpse of our delicious fast food items</p>
-
-        <div class="gallery-grid">
-          <div class="gallery-item">
-            <img src="assets/WhatsApp Image 2025-09-25 at 8.04.57 PM.jpeg" alt="Burger Special">
-            <div class="overlay">Burger Special</div>
-          </div>
-          <div class="gallery-item">
-            <img src="assets/WhatsApp Image 2025-09-25 at 8.04.57 PM.jpeg" alt="Cheesy Pizza">
-            <div class="overlay">Cheesy Pizza</div>
-          </div>
-          <div class="gallery-item">
-            <img src="assets/WhatsApp Image 2025-09-25 at 8.04.58 PM.jpeg" alt="Crispy Fries">
-            <div class="overlay">Crispy Fries</div>
-          </div>
-          <div class="gallery-item">
-            <img src="assets/burger.jpeg" alt="Grilled Sandwich">
-            <div class="overlay">Grilled Sandwich</div>
-          </div>
-          <div class="gallery-item">
-            <img src="assets/burger2.jpeg" alt="Fresh Salad">
-            <div class="overlay">Fresh Salad</div>
-          </div>
-          <div class="gallery-item">
-            <img src="assets/WhatsApp Image 2025-09-25 at 8.04.57 PM.jpeg" alt="Tasty Wrap">
-            <div class="overlay">Tasty Wrap</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="team" id="team">
-      <div class="container">
-        <!-- Section Header -->
-        <div class="team-header">
-          <h2 class="team-title">👨‍🍳 Meet Our Chefs</h2>
-          <p class="team-subtitle">The talented people behind your favorite dishes</p>
+        <!-- Newsletter -->
+        <div class="newsletter">
+          <h2>📩 Get exclusive deals in your inbox</h2>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Enter your email" required />
+            <button type="submit">Subscribe</button>
+          </form>
         </div>
 
-        <!-- Team Grid -->
-        <div class="team-grid">
-          <!-- Chef Card -->
-          <div class="team-card">
-            <img src="assets/cheaf-03.jpg" alt="Chef John" class="team-img" />
-            <div class="team-info">
-              <h3 class="team-name">Chef John Doe</h3>
-              <span class="team-role">Head Chef</span>
-              <p class="team-desc">Expert in Italian cuisine with 15+ years of experience.</p>
-            </div>
+        <div class="footer-content">
+          <!-- Links -->
+          <div class="footer-col">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="#home">Home</a></li>
+              <li><a href="#menu">Menu</a></li>
+              <li><a href="#services">Services</a></li>
+              <li><a href="#about">About Us</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
           </div>
 
-          <!-- Chef Card -->
-          <div class="team-card">
-            <img src="assets/cheaf-02.jpg" alt="Chef Maria" class="team-img" />
-            <div class="team-info">
-              <h3 class="team-name">Chef Maria Lopez</h3>
-              <span class="team-role">Pastry Chef</span>
-              <p class="team-desc">Bringing sweetness to life with world-class desserts.</p>
-            </div>
+          <!-- Opening Hours -->
+          <div class="footer-col">
+            <h3>Opening Hours</h3>
+            <ul>
+              <li>Mon - Fri: 10:00 AM - 10:00 PM</li>
+              <li>Sat: 11:00 AM - 11:00 PM</li>
+              <li>Sun: Closed</li>
+            </ul>
           </div>
 
-          <!-- Chef Card -->
-          <div class="team-card">
-            <img src="assets/cheaf-01.jpg" alt="Chef Alex" class="team-img" />
-            <div class="team-info">
-              <h3 class="team-name">Chef Alex Kim</h3>
-              <span class="team-role">Sous Chef</span>
-              <p class="team-desc">Fusion food specialist, mixing flavors across cultures.</p>
+          <!-- Social Media -->
+          <div class="footer-col">
+            <h3>Follow Us</h3>
+            <div class="social-icons">
+              <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+              <a href="#"><i class="fa-brands fa-instagram"></i></a>
+              <a href="#"><i class="fa-brands fa-twitter"></i></a>
+              <a href="#"><i class="fa-brands fa-youtube"></i></a>
             </div>
           </div>
         </div>
-      </div>
-    </section>
 
-    <!-- Feedback Section -->
-    <section class="feedback-section" id="feedback">
-      <h2>Give Your Feedback</h2>
-      <p>How was your experience with us?</p>
-
-      <div class="feedback-icons">
-
-        <i class="fa-regular fa-face-smile rating" data-value="happy" title="Happy"></i>
-        <i class="fa-regular fa-face-meh rating" data-value="neutral" title="Okay"></i>
-        <i class="fa-regular fa-face-frown rating" data-value="sad" title="Sad"></i>
-        <i class="fa-regular fa-face-angry rating" data-value="angry" title="Angry"></i>
-      </div>
-
-      <textarea placeholder="Write your feedback..." class="feedback-text"></textarea>
-      <button type="submit" class="btn-submit">Submit</button>
-    </section>
-
-
-  </main>
-
-  <footer class="footer">
-    <div class="container">
-      <!-- Newsletter -->
-      <div class="newsletter">
-        <h2>📩 Get exclusive deals in your inbox</h2>
-        <form class="newsletter-form">
-          <input type="email" placeholder="Enter your email" required />
-          <button type="submit">Subscribe</button>
-        </form>
-      </div>
-
-      <div class="footer-content">
-        <!-- Links -->
-        <div class="footer-col">
-          <h3>Quick Links</h3>
-          <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#menu">Menu</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#about">About Us</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </div>
-
-        <!-- Opening Hours -->
-        <div class="footer-col">
-          <h3>Opening Hours</h3>
-          <ul>
-            <li>Mon - Fri: 10:00 AM - 10:00 PM</li>
-            <li>Sat: 11:00 AM - 11:00 PM</li>
-            <li>Sun: Closed</li>
-          </ul>
-        </div>
-
-        <!-- Social Media -->
-        <div class="footer-col">
-          <h3>Follow Us</h3>
-          <div class="social-icons">
-            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-            <a href="#"><i class="fa-brands fa-instagram"></i></a>
-            <a href="#"><i class="fa-brands fa-twitter"></i></a>
-            <a href="#"><i class="fa-brands fa-youtube"></i></a>
-          </div>
+        <!-- Copyright -->
+        <div class="footer-bottom">
+          <p>© 2025 FastFoodie. All Rights Reserved.</p>
         </div>
       </div>
+    </footer>
 
-      <!-- Copyright -->
-      <div class="footer-bottom">
-        <p>© 2025 FastFoodie. All Rights Reserved.</p>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Swiper js auto slider -->
-  <script>
-    var swiper = new Swiper(".heroSwiper", {
-      slidesPerView: "auto", // har slide apni width lega
-      spaceBetween: 20, // gap between slides
-      loop: true, // infinite loop
-      freeMode: true, // smooth scroll
-      autoplay: {
-        delay: 0, // no delay
-        disableOnInteraction: false,
-      },
-      speed: 4000, // smooth continuous speed
-      allowTouchMove: false, // user swipe disable (sirf auto move karega)
-    });
-  </script>
-  <!-- counter -->
-  <script>
-    document.querySelectorAll(".menu-card").forEach(card => {
-      const addBtn = card.querySelector(".add-btn");
-      const counter = card.querySelector(".counter");
-      const countEl = card.querySelector(".count");
-      const increase = card.querySelector(".increase");
-      const decrease = card.querySelector(".decrease");
-
-      let count = 1;
-
-      addBtn.addEventListener("click", () => {
-        addBtn.style.display = "none";
-        counter.classList.remove("hidden");
+    <!-- Swiper js auto slider -->
+    <script>
+      var swiper = new Swiper(".heroSwiper", {
+        slidesPerView: "auto", // har slide apni width lega
+        spaceBetween: 20, // gap between slides
+        loop: true, // infinite loop
+        freeMode: true, // smooth scroll
+        autoplay: {
+          delay: 0, // no delay
+          disableOnInteraction: false,
+        },
+        speed: 4000, // smooth continuous speed
+        allowTouchMove: false, // user swipe disable (sirf auto move karega)
       });
+    </script>
 
-      increase.addEventListener("click", () => {
-        count++;
-        countEl.textContent = count;
-      });
+    <!-- counter -->
+    <script>
+      document.querySelectorAll(".menu-card").forEach((card) => {
+        const addBtn = card.querySelector(".add-btn");
+        const counter = card.querySelector(".counter");
+        const countEl = card.querySelector(".count");
+        const increase = card.querySelector(".increase");
+        const decrease = card.querySelector(".decrease");
 
-      decrease.addEventListener("click", () => {
-        if (count > 1) {
-          count--;
+        let count = 1;
+
+        addBtn.addEventListener("click", () => {
+          addBtn.style.display = "none";
+          counter.classList.remove("hidden");
+        });
+
+        increase.addEventListener("click", () => {
+          count++;
           countEl.textContent = count;
-        } else {
-          // reset back to add button
-          count = 1;
-          counter.classList.add("hidden");
-          addBtn.style.display = "inline-block";
+        });
+
+        decrease.addEventListener("click", () => {
+          if (count > 1) {
+            count--;
+            countEl.textContent = count;
+          } else {
+            // reset back to add button
+            count = 1;
+            counter.classList.add("hidden");
+            addBtn.style.display = "inline-block";
+          }
+        });
+      });
+    </script>
+
+    <!-- profile -->
+    <script>
+      const profileBtn = document.getElementById("profileBtn");
+      const sidebar = document.getElementById("profileSidebar");
+      const closeSidebar = document.getElementById("closeSidebar");
+
+      // Open Sidebar
+      profileBtn.addEventListener("click", () => {
+        sidebar.classList.add("active");
+      });
+
+      // Close Sidebar
+      closeSidebar.addEventListener("click", () => {
+        sidebar.classList.remove("active");
+      });
+
+      // Close when clicking outside
+      sidebar.addEventListener("click", (e) => {
+        if (e.target === sidebar) {
+          sidebar.classList.remove("active");
         }
       });
-    });
-  </script>
-  <!-- profile -->
-  <script>
-    const profileBtn = document.getElementById("profileBtn");
-    const sidebar = document.getElementById("profileSidebar");
-    const closeSidebar = document.getElementById("closeSidebar");
 
-    // Open Sidebar
-    profileBtn.addEventListener("click", () => {
-      sidebar.classList.add("active");
-    });
-
-    // Close Sidebar
-    closeSidebar.addEventListener("click", () => {
-      sidebar.classList.remove("active");
-    });
-
-    // Close when clicking outside
-    sidebar.addEventListener("click", (e) => {
-      if (e.target === sidebar) {
-        sidebar.classList.remove("active");
-      }
-    });
-
-    // Swipe to close (mobile)
-    let startX;
-    sidebar.addEventListener("touchstart", (e) => {
-      startX = e.touches[0].clientX;
-    });
-    sidebar.addEventListener("touchmove", (e) => {
-      let currentX = e.touches[0].clientX;
-      if (currentX - startX > 80) { // swipe right
-        sidebar.classList.remove("active");
-      }
-    });
-  </script>
-  <!-- fedback -->
-  <script>
-    const ratings = document.querySelectorAll(".rating");
-
-    ratings.forEach(rating => {
-      rating.addEventListener("click", () => {
-        ratings.forEach(r => r.classList.remove("active"));
-        rating.classList.add("active");
+      // Swipe to close (mobile)
+      let startX;
+      sidebar.addEventListener("touchstart", (e) => {
+        startX = e.touches[0].clientX;
       });
-    });
+      sidebar.addEventListener("touchmove", (e) => {
+        let currentX = e.touches[0].clientX;
+        if (currentX - startX > 80) {
+          // swipe right
+          sidebar.classList.remove("active");
+        }
+      });
+    </script>
 
-  </script>
+    <!-- fedback -->
+    <script>
+      const ratings = document.querySelectorAll(".rating");
 
-  <script src="js/main.js"></script>
-</body>
+      ratings.forEach((rating) => {
+        rating.addEventListener("click", () => {
+          ratings.forEach((r) => r.classList.remove("active"));
+          rating.classList.add("active");
+        });
+      });
+    </script>
 
+    <script>
+      ScrollReveal().reveal(".fade-in", {
+        duration: 1000,
+        distance: "50px",
+        easing: "ease-in-out",
+        origin: "bottom",
+      });
+    </script>
+
+    <script src="js/main.js"></script>
+  </body>
 </html>

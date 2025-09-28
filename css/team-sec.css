@@ -1,4 +1,6 @@
-/* Team Section */
+/* ============================
+   Team Section
+============================ */
 .team {
   padding: 60px 20px;
   background: #fefefe;
@@ -26,14 +28,18 @@
   margin-top: 8px;
 }
 
-/* Team Grid */
+/* ============================
+   Team Grid (Desktop)
+============================ */
 .team-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 24px;
 }
 
-/* Team Card */
+/* ============================
+   Team Card
+============================ */
 .team-card {
   background: #fff;
   border-radius: 16px;
@@ -42,6 +48,8 @@
   transition: transform 0.3s ease;
   text-align: center;
   padding-bottom: 16px;
+  min-width: 260px; /* swipe ke liye */
+  flex: 0 0 auto;
 }
 
 .team-card:hover {
@@ -77,4 +85,27 @@
   color: #666;
   margin-top: 6px;
   line-height: 1.4;
+}
+
+/* ============================
+   Responsive Swipe (Mobile)
+============================ */
+@media (max-width: 768px) {
+  .team-grid {
+    display: flex; /* swipe enable */
+    gap: 16px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 10px;
+  }
+
+  .team-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .team-card {
+    flex: 0 0 80%; /* ek card ek screen par */
+    scroll-snap-align: start;
+  }
 }

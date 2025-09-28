@@ -1,4 +1,6 @@
-/* Gallery Section */
+/* ============================
+   Gallery Section
+============================ */
 .gallery {
   padding: 60px 20px;
   background: #fafafa;
@@ -18,18 +20,21 @@
   font-size: 1rem;
 }
 
-/* Grid */
+/* Grid Layout (Desktop) */
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 18px;
 }
 
+/* Gallery Item */
 .gallery-item {
   position: relative;
   overflow: hidden;
   border-radius: 12px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  min-width: 240px; /* swipe ke liye */
+  flex: 0 0 auto;
 }
 
 .gallery-item img {
@@ -61,4 +66,27 @@
 
 .gallery-item:hover .overlay {
   opacity: 1;
+}
+
+/* ============================
+   Responsive Swipe (Mobile)
+============================ */
+@media (max-width: 768px) {
+  .gallery-grid {
+    display: flex; /* swipeable */
+    gap: 16px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 10px;
+  }
+
+  .gallery-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .gallery-item {
+    flex: 0 0 80%; /* ek card ek baar mein */
+    scroll-snap-align: start;
+  }
 }

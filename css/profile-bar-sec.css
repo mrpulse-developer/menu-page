@@ -1,0 +1,121 @@
+/* ============================
+   Profile Sidebar
+============================ */
+
+/* Sidebar Background Overlay */
+.profile-sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 0; /* hidden initially */
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  overflow: hidden;
+  transition: all 0.4s ease-in-out;
+  z-index: 2000;
+}
+
+/* Sidebar Content */
+.sidebar-content {
+  position: absolute;
+  top: 0;
+  right: -320px;
+  width: 320px;
+  max-width: 100%;
+  height: 100%;
+  background: #fff;
+  box-shadow: -4px 0 12px rgba(0, 0, 0, 0.2);
+  padding: 24px 20px;
+  transition: right 0.4s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+/* Active State */
+.profile-sidebar.active {
+  width: 100%; /* overlay full screen */
+}
+.profile-sidebar.active .sidebar-content {
+  right: 0; /* slide in */
+}
+
+/* Close Button */
+.close-btn {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: #555;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+.close-btn:hover {
+  color: #e63946;
+  transform: rotate(90deg);
+}
+
+/* Sidebar Header */
+.sidebar-header {
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+.sidebar-header i {
+  font-size: 3.2rem;
+  color: #e63946;
+  display: block;
+  margin-bottom: 12px;
+}
+.sidebar-header h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+/* Sidebar Menu */
+.sidebar-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.sidebar-menu li {
+  padding: 14px 16px;
+  background: #f8f8f8;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.sidebar-menu li:hover {
+  background: #e63946;
+  color: #fff;
+  transform: translateX(4px);
+}
+.sidebar-menu li i {
+  color: #e63946;
+  font-size: 1.2rem;
+  transition: 0.3s;
+}
+.sidebar-menu li:hover i {
+  color: #fff;
+}
+
+/* ============================
+   Responsive: Mobile
+============================ */
+@media (max-width: 768px) {
+  .sidebar-content {
+    width: 100%;
+    right: -100%; /* hide full sidebar on mobile */
+  }
+}

@@ -8,7 +8,6 @@
   min-height: 100vh;
   gap: 40px;
   padding: 40px 60px;
-  /* equal left-right padding */
   margin: 0 auto;
   max-width: 1400px;
   box-sizing: border-box;
@@ -23,7 +22,7 @@
 }
 
 .hero__tagline {
-  color: #e63946;
+  color: var(--accent); /* mustard yellow */
   font-weight: 700;
   font-size: 1rem;
   letter-spacing: 0.5px;
@@ -35,12 +34,10 @@
     opacity: 0.6;
     transform: scale(1);
   }
-
   50% {
     opacity: 1;
     transform: scale(1.05);
   }
-
   100% {
     opacity: 0.6;
     transform: scale(1);
@@ -51,12 +48,12 @@
   font-size: 3rem;
   font-weight: 800;
   line-height: 1.2;
-  color: #1a1a1a;
+  color: var(--text);
 }
 
 .hero__left p {
   font-size: 1.2rem;
-  color: #555;
+  color: var(--muted);
   max-width: 500px;
 }
 
@@ -70,18 +67,19 @@
   padding: 5px;
   width: 40px;
   height: 40px;
-  border: 1px solid #1a1a1a;
+  border: 2px solid var(--accent);
   border-radius: 8px;
-  color: #333;
+  color: var(--text);
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.2s;
+  transition: all 0.25s ease;
 }
 
 .hero__socials a:hover {
-  background-color: #e63946;
+  background-color: var(--accent);
   color: #fff;
+  transform: translateY(-2px);
 }
 
 /* Common Button Style */
@@ -89,41 +87,41 @@
   border: none;
   cursor: pointer;
   padding: 12px 22px;
-  border-radius: 8px;
+  border-radius: 10px;
   font-weight: 600;
   font-size: 1rem;
   transition: all 0.3s ease;
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  /* emoji aur text ke beech thoda gap */
 }
 
-/* Primary Button (Red) */
+/* Primary Button (Red - Order Now) */
 .btn-order {
-  background: #e63946;
+  background: #e63946; /* ketchup red */
   color: #fff;
   box-shadow: 0 4px 12px rgba(230, 57, 70, 0.25);
 }
 
 .btn-order:hover {
   background: #c71c2f;
-  transform: translateY(-2px);
+  transform: translateY(-2px) scale(1.03);
   box-shadow: 0 6px 18px rgba(230, 57, 70, 0.35);
 }
 
-/* Secondary Button (Light) */
+/* Secondary Button (Mustard Yellow) */
 .btn-secondary {
-  background: #f8f8f8;
-  color: #333;
-  border: 1px solid #ddd;
+  background: var(--accent);
+  color: #fff;
+  border: 2px solid var(--accent);
 }
 
 .btn-secondary:hover {
-  background: #eee;
-  border-color: #e63946;
-  color: #e63946;
+  background: #fff;
+  border-color: var(--accent);
+  color: var(--accent);
   transform: translateY(-2px);
+  box-shadow: 0 3px 10px rgba(255, 183, 3, 0.35);
 }
 
 /* Buttons Wrapper */
@@ -132,7 +130,6 @@
   gap: 16px;
   margin-top: 12px;
   flex-wrap: wrap;
-  /* responsive ke liye wrap ho jaye */
 }
 
 /* Right Side */
@@ -151,12 +148,16 @@
 
 .hero__image {
   width: 420px;
-  /* bigger image */
   height: 420px;
   border-radius: 50%;
   object-fit: cover;
-  border: 6px solid #fff;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+  border: 8px solid #fff;
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.18);
+  transition: transform 0.4s ease;
+}
+
+.hero__image:hover {
+  transform: scale(1.05) rotate(-2deg);
 }
 
 /* List Box */
@@ -183,15 +184,16 @@
   border-radius: 30px;
   font-size: 1rem;
   font-weight: 600;
-  color: #333;
+  color: var(--text);
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
   cursor: pointer;
 }
 
 .hero__list li:hover {
-  background: #e63946;
+  background: var(--accent);
   color: #fff;
+  transform: translateX(6px);
 }
 
 /* =========================
@@ -212,6 +214,12 @@
   text-align: center;
   white-space: nowrap;
   width: auto !important;
+  transition: all 0.3s ease;
+}
+
+.swiper-slide:hover {
+  background: var(--accent);
+  color: #fff;
 }
 
 /* =========================
@@ -223,7 +231,6 @@
     text-align: center;
     gap: 30px;
     padding: 20px;
-    /* small padding on mobile */
   }
 
   .hero__right {

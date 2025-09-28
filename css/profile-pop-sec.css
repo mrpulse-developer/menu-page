@@ -1,32 +1,42 @@
-/* Profile Popup Background */
-.profile-popup {
+/* ============================
+   Profile Sidebar
+============================ */
+
+/* Sidebar Background Overlay */
+.profile-sidebar {
   position: fixed;
   top: 0;
-  left: 0;
-  width: 100%;
+  right: 0;
+  width: 0; /* hidden initially */
   height: 100%;
-  background: rgba(0,0,0,0.6);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background: rgba(0, 0, 0, 0.6);
+  overflow: hidden;
+  transition: all 0.3s ease;
   z-index: 2000;
 }
 
-/* Hidden */
-.hidden {
-  display: none;
+/* Sidebar Content (inside <aside>) */
+.sidebar-content {
+  position: absolute;
+  top: 0;
+  right: -320px;
+  width: 320px;
+  max-width: 100%;
+  height: 100%;
+  background: #fff;
+  box-shadow: -4px 0 12px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  transition: right 0.3s ease;
+  display: flex;
+  flex-direction: column;
 }
 
-/* Popup Box */
-.popup-content {
-  background: #fff;
-  border-radius: 16px;
-  padding: 20px;
-  width: 320px;
-  max-width: 90%;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.2);
-  position: relative;
-  animation: fadeIn 0.3s ease;
+/* Active State */
+.profile-sidebar.active {
+  width: 100%; /* overlay full screen */
+}
+.profile-sidebar.active .sidebar-content {
+  right: 0; /* slide in */
 }
 
 /* Close Button */
@@ -36,61 +46,71 @@
   right: 14px;
   background: none;
   border: none;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   cursor: pointer;
   color: #555;
+  transition: 0.3s;
 }
-
 .close-btn:hover {
   color: #e63946;
 }
 
-/* Popup Menu */
-.popup-content h3 {
+/* Sidebar Header */
+.sidebar-header {
   text-align: center;
-  margin-bottom: 15px;
-  font-size: 1.3rem;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+.sidebar-header i {
+  font-size: 3rem;
+  color: #e63946;
+  display: block;
+  margin-bottom: 10px;
+}
+.sidebar-header h3 {
+  font-size: 1.4rem;
   font-weight: 700;
   color: #1a1a1a;
 }
 
-.popup-menu {
+/* Sidebar Menu */
+.sidebar-menu {
   list-style: none;
   padding: 0;
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 14px;
 }
-
-.popup-menu li {
-  padding: 12px;
+.sidebar-menu li {
+  padding: 14px;
   background: #f8f8f8;
-  border-radius: 8px;
+  border-radius: 10px;
   font-size: 1rem;
   font-weight: 600;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   cursor: pointer;
   transition: all 0.3s;
 }
-
-.popup-menu li:hover {
+.sidebar-menu li:hover {
   background: #e63946;
   color: #fff;
 }
-
-.popup-menu li i {
+.sidebar-menu li i {
   color: #e63946;
 }
-
-.popup-menu li:hover i {
+.sidebar-menu li:hover i {
   color: #fff;
 }
 
-/* Animation */
-@keyframes fadeIn {
-  from { opacity: 0; transform: scale(0.95); }
-  to { opacity: 1; transform: scale(1); }
+/* ============================
+   Responsive: Mobile
+============================ */
+@media (max-width: 768px) {
+  .sidebar-content {
+    width: 100%;
+    right: -100%; /* hide full sidebar on mobile */
+  }
 }
